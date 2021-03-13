@@ -12,6 +12,11 @@ import { GameSelectedComponent } from './core/views/game-selected/game-selected.
 import { GameCardComponent } from './core/customComponents/game-card/game-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//Angular Material Modules
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +26,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     CategorySelectedComponent,
     GameSelectedComponent,
-    GameCardComponent
+    GameCardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Angular Material Modules
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

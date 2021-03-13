@@ -5,7 +5,7 @@
     </button> -->
     <span>{{appName}}</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with language change icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Language">
       <mat-icon>language</mat-icon>
     </button>
     <mat-menu #menu="matMenu" >
@@ -14,9 +14,9 @@
       </div>
     </mat-menu>
 
-    <button mat-icon-button aria-label="Example icon-button with login icon">
+    <button mat-icon-button matTooltip="Login">
       <mat-icon>login</mat-icon>
     </button>
-    <mat-slide-toggle>Online/Offline</mat-slide-toggle>
+    <mat-slide-toggle matTooltip="Online/Offline"></mat-slide-toggle>
   </mat-toolbar>
 </p>

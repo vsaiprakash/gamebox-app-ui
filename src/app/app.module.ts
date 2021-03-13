@@ -23,7 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCardModule,
     MatRippleModule,
     MatSlideToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

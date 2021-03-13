@@ -1,1 +1,6 @@
-<p>category-selected works!</p>
+<h3>{{category.category_title}}</h3>
+<p>{{category.category_description}}</p>
+
+<div *ngFor="let game of games">
+  <app-game-card [game]="(game)"></app-game-card>
+</div>

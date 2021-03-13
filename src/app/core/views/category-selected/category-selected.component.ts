@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { CATEGORIES_LIST, GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
+import { CategoryModel } from '../../models/category-model';
+import { GameModel } from '../../models/game-model';
 
 @Component({
   selector: 'app-category-selected',
@@ -7,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorySelectedComponent implements OnInit {
 
-  constructor() { }
+  category: CategoryModel;
+  games: GameModel[];
+
+  // location: Location;
+  activatedRoute: ActivatedRoute;
+
+  constructor(activatedRoute: ActivatedRoute) {
+    // this.location = location;
+    this.activatedRoute = activatedRoute;
+
+  }
 
   ngOnInit(): void {
+    this.category = CATEGORIES_LIST.find((category)=>{
+      if(category.category_value==this.activatedRoute.snapshot.paramMap.get('id')){
+        return category;
+      }
+    });
+
+    this.updateCategoryPage();
+  }
+
+  // ngOnChanges():void{
+  //   this.updateCategoryPage();
+  // }
+
+  updateCategoryPage():void{
+    if(CATEGORIES_LIST[0].category_value==this.activatedRoute.snapshot.paramMap.get('id')){
+      //It is All Categories
+      this.games = GAMEBOXCONFIG.GAMES;
+    }
+    else{
+      this.games = GAMEBOXCONFIG.GAMES.filter((game)=>{
+        if(game.game_category.category_value==this.category.category_value){
+          return game;
+        }
+      });
+    }
   }
 
 }

@@ -1,9 +1,15 @@
 <p>
   <mat-toolbar color="primary">
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <div class="heading" >
+      <a href="home">
+        {{appName}}
+      </a>
+    </div>
+
+    <!-- href="/home"  [routerLink]="['home']"  -->
+    <!-- <button mat-button>
+      {{appName}}
     </button> -->
-    <span>{{appName}}</span>
 
     <span class="example-spacer"></span>
 
@@ -12,7 +18,11 @@
     </button>
     <mat-menu #categoriesMenu="matMenu" >
       <div *ngFor="let category of categories">
-        <button mat-menu-item>{{category.category_title}}</button>
+        <button mat-menu-item (click)="openCategory(category.category_value)" >
+
+        <!-- [routerLink]="['category', category.category_value]" -->
+          {{category.category_title}}
+        </button>
       </div>
     </mat-menu>
 

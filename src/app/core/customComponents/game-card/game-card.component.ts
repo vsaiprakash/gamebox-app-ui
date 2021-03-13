@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { GameModel } from 'src/app/core/models/game-model'
 
@@ -10,10 +11,17 @@ import { GameModel } from 'src/app/core/models/game-model'
 export class GameCardComponent implements OnInit {
 
   @Input() game: GameModel;
+  router: Router;
 
-  constructor() { }
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit(): void {
+  }
+
+  openGame():void{
+    this.router.navigateByUrl('gameLink');
   }
 
 }

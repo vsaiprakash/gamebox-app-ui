@@ -1,5 +1,5 @@
 <div class="custom-game-card" *ngIf="game">
-  <mat-card matRipple  [routerLink]="gameLink">
+  <mat-card matRipple (click)="openGame()" [routerLink]="gameLink">
     <div class="row">
       <div class="col-4">
         <img mat-card-image [src]="game.game_logo_link">

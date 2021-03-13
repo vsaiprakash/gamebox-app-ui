@@ -4,11 +4,22 @@
       <mat-icon>menu</mat-icon>
     </button> -->
     <span>{{appName}}</span>
+
     <span class="example-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Language">
+
+    <button mat-button [matMenuTriggerFor]="categoriesMenu">
+      Categories
+    </button>
+    <mat-menu #categoriesMenu="matMenu" >
+      <div *ngFor="let category of categories">
+        <button mat-menu-item>{{category.category_title}}</button>
+      </div>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="Language">
       <mat-icon>language</mat-icon>
     </button>
-    <mat-menu #menu="matMenu" >
+    <mat-menu #languageMenu="matMenu" >
       <div *ngFor="let language of languages">
         <button mat-menu-item>{{language.LANGUAGE_DISPLAYNAME}}</button>
       </div>

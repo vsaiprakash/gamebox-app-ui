@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
+import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
+import { CategoryModel } from '../../models/category-model';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,14 @@ export class HeaderComponent implements OnInit {
 
   appName: string;
   languages: any[];
+  categories: CategoryModel[];
 
   constructor() { }
 
   ngOnInit(): void {
     this.appName = GAMEBOXCONFIG.APPNAME;
     this.languages = GAMEBOXCONFIG.LANGUAGES;
+    this.categories = CATEGORIES_LIST;
   }
 
 }

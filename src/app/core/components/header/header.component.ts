@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  appName: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.appName = GAMEBOXCONFIG.APPNAME;
   }
 
 }

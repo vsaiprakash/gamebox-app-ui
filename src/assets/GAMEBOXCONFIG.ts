@@ -13,9 +13,10 @@ export const RATINGS = [0,1,2,3,4,5];
 export const MAXRATING = 5;
 
 export const GAMEBOXCONFIG = {
+  APPNAME:"Game Box",
   GAMES:[
-    new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "", CATEGORIES_LIST[1], RATINGS[0] ),
-    new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "", CATEGORIES_LIST[2], RATINGS[4] ),
+    new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "pokemon", CATEGORIES_LIST[1], RATINGS[0] ),
+    new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", CATEGORIES_LIST[2], RATINGS[4] ),
   ],
   CAROUSEL_LIST:[
     new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon.jpeg", ""),

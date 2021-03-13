@@ -7,7 +7,7 @@ import { GameSelectedComponent } from './core/views/game-selected/game-selected.
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'gameLink', component: GameSelectedComponent }
+  { path: 'gameLink/:id', component: GameSelectedComponent }
 ];
 
 @NgModule({

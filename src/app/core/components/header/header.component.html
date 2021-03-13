@@ -5,11 +5,17 @@
     </button> -->
     <span>{{appName}}</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with language change icon">
+      <mat-icon>language</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+    <mat-menu #menu="matMenu" >
+      <div *ngFor="let language of languages">
+        <button mat-menu-item>{{language.LANGUAGE_DISPLAYNAME}}</button>
+      </div>
+    </mat-menu>
+
+    <button mat-icon-button aria-label="Example icon-button with login icon">
+      <mat-icon>login</mat-icon>
     </button>
     <mat-slide-toggle>Online/Offline</mat-slide-toggle>
   </mat-toolbar>

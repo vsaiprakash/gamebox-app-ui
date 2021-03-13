@@ -9,11 +9,13 @@ import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
 export class HeaderComponent implements OnInit {
 
   appName: string;
+  languages: any[];
 
   constructor() { }
 
   ngOnInit(): void {
     this.appName = GAMEBOXCONFIG.APPNAME;
+    this.languages = GAMEBOXCONFIG.LANGUAGES;
   }
 
 }

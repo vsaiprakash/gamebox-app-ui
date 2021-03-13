@@ -14,6 +14,9 @@ export const MAXRATING = 5;
 
 export const GAMEBOXCONFIG = {
   APPNAME:"Game Box",
+  LANGUAGES:[
+    { LANGUAGE_DISPLAYNAME: "English", LANGUAGE_VALUE: "en" }
+  ],
   GAMES:[
     new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "pokemon", CATEGORIES_LIST[1], RATINGS[0] ),
     new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", CATEGORIES_LIST[2], RATINGS[4] ),

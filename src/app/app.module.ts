@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingsComponent } from './core/customComponents/ratings/ratings.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     CategorySelectedComponent,
     GameSelectedComponent,
     GameCardComponent,
+    RatingsComponent,
 
   ],
   imports: [
@@ -38,7 +41,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

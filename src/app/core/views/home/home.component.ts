@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
+import { GameModel } from '../../models/game-model';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  games: GameModel[];
+
+  constructor() {
+    this.games = GAMEBOXCONFIG.GAMES;
+  }
 
   ngOnInit(): void {
   }

@@ -1,13 +1,27 @@
-<mat-card>
-  <div class="col-4">
+<div *ngIf="game">
+  <mat-card>
+    <div class="row">
+      <div class="col-4">
+        <img src="game.game_logo_link">
+      </div>
+      <div class="col-8">
+        <mat-card-title>
+          {{game.game_title}}
+        </mat-card-title>
+          {{game.game_category.category_title}}
+        <mat-card-content>
+          {{game.game_description}}
+        </mat-card-content>
+        <mat-card-actions>
 
-  </div>
-  <div class="col-8">
-    <mat-card-title>Title</mat-card-title>
-    mat-card-subtitle
-    <mat-card-content>Description</mat-card-content>
-    mat-card-actions
-    mat-card-footer
-  </div>
+        </mat-card-actions>
+        <mat-card-footer>
+          {{game.game_rating}}
 
-</mat-card>
+        </mat-card-footer>
+      </div>
+    </div>
+
+
+  </mat-card>
+</div>

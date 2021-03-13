@@ -9,6 +9,7 @@ export const CATEGORIES_LIST = [
 ];
 
 export const RATINGS = [0,1,2,3,4,5];
+export const MAXRATING = 5;
 
 export const GAMEBOXCONFIG = {
   GAMES:[

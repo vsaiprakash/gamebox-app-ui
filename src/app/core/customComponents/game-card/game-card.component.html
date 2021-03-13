@@ -17,7 +17,7 @@
         </mat-card-actions>
         <mat-card-footer>
           {{game.game_rating}}
-
+          <app-ratings [currRating]="(game.game_rating)"></app-ratings>
         </mat-card-footer>
       </div>
     </div>

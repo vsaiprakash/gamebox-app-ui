@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MAXRATING } from 'src/assets/GAMEBOXCONFIG';
 
 @Component({
   selector: 'app-ratings',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingsComponent implements OnInit {
 
+  maxRating: number;
+  @Input() currRating: number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.maxRating = MAXRATING;
+
   }
 
 }

@@ -1,8 +1,8 @@
-<div *ngIf="game">
-  <mat-card>
+<div class="custom-game-card" *ngIf="game">
+  <mat-card matRipple  [routerLink]="gameLink">
     <div class="row">
       <div class="col-4">
-        <img src="game.game_logo_link">
+        <img mat-card-image [src]="game.game_logo_link">
       </div>
       <div class="col-8">
         <mat-card-title>
@@ -11,13 +11,13 @@
           {{game.game_category.category_title}}
         <mat-card-content>
           {{game.game_description}}
+          <app-ratings [currRating]="(game.game_rating)"></app-ratings>
         </mat-card-content>
         <mat-card-actions>
 
         </mat-card-actions>
         <mat-card-footer>
-          {{game.game_rating}}
-          <app-ratings [currRating]="(game.game_rating)"></app-ratings>
+
         </mat-card-footer>
       </div>
     </div>

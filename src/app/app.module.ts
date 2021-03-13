@@ -10,15 +10,19 @@ import { HomeComponent } from './core/views/home/home.component';
 import { CategorySelectedComponent } from './core/views/category-selected/category-selected.component';
 import { GameSelectedComponent } from './core/views/game-selected/game-selected.component';
 import { GameCardComponent } from './core/customComponents/game-card/game-card.component';
+import { RatingsComponent } from './core/customComponents/ratings/ratings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 //Angular Material Modules
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RatingsComponent } from './core/customComponents/ratings/ratings.component';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CustomCarouselComponent } from './core/customComponents/custom-carousel/custom-carousel.component';
 
 @NgModule({
   declarations: [
@@ -31,18 +35,22 @@ import { RatingsComponent } from './core/customComponents/ratings/ratings.compon
     GameSelectedComponent,
     GameCardComponent,
     RatingsComponent,
+    CustomCarouselComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
+    NgbModule,
     // Angular Material Modules
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    NgbModule
+    MatRippleModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<p>custom-carousel works!</p>
+<ngb-carousel *ngIf="games">
+<ng-template ngbSlide *ngFor="let game of games">
+      <div>
+        <!-- games[0].game_logo_link -->
+        <img [src]="game.game_logo_link" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{game.game_title}}</h3>
+        <p>{{game.game_description}}</p>
+      </div>
+    </ng-template>
+</ngb-carousel>

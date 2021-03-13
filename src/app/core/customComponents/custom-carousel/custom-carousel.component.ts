@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { GameModel } from 'src/app/core/models/game-model'
-import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
+import { CarouselModel } from 'src/app/core/models/carousel-model'
 
 @Component({
   selector: 'app-custom-carousel',
@@ -9,14 +8,11 @@ import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
   styleUrls: ['./custom-carousel.component.scss']
 })
 export class CustomCarouselComponent implements OnInit {
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
-  games: GameModel[]  = GAMEBOXCONFIG.GAMES;
-
+  @Input() carouselslides: CarouselModel[];
   constructor() { }
 
   ngOnInit(): void {
-    this.games = GAMEBOXCONFIG.GAMES;
   }
 
 }

@@ -1,5 +1,6 @@
 import { GameModel } from "src/app/core/models/game-model";
 import { CategoryModel } from "src/app/core/models/category-model";
+import { CarouselModel } from "src/app/core/models/carousel-model";
 
 
 export const CATEGORIES_LIST = [
@@ -15,5 +16,9 @@ export const GAMEBOXCONFIG = {
   GAMES:[
     new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "", CATEGORIES_LIST[1], RATINGS[0] ),
     new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "", CATEGORIES_LIST[2], RATINGS[4] ),
+  ],
+  CAROUSEL_LIST:[
+    new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon.jpeg", ""),
+    new CarouselModel("Mortal Kombat", "Fighting & Action Game", "assets/images/mortalkombat.jpg", "")
   ]
 };

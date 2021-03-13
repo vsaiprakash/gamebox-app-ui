@@ -19,7 +19,7 @@ export const GAMEBOXCONFIG = {
     new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", CATEGORIES_LIST[2], RATINGS[4] ),
   ],
   CAROUSEL_LIST:[
-    new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon.jpeg", ""),
-    new CarouselModel("Mortal Kombat", "Fighting & Action Game", "assets/images/mortalkombat.jpg", "")
+    new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon-fire-red-carousel.jpg", "pokemon"),
+    new CarouselModel("Mortal Kombat", "Fighting & Action Game", "assets/images/mortalkombat-carousel.jpg", "mortalkombat")
   ]
 };

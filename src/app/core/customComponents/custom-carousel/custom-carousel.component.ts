@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CarouselModel } from 'src/app/core/models/carousel-model'
 
@@ -10,9 +11,17 @@ import { CarouselModel } from 'src/app/core/models/carousel-model'
 export class CustomCarouselComponent implements OnInit {
 
   @Input() carouselslides: CarouselModel[];
-  constructor() { }
+  router: Router;
+
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit(): void {
+  }
+
+  openGame(carouselslide: CarouselModel):void{
+    this.router.navigateByUrl("gameLink/"+carouselslide.carousel_game_link);
   }
 
 }

@@ -6,6 +6,10 @@
       <div class="carousel-caption" >
         <h3>{{carouselslide.carousel_title}}</h3>
         <p>{{carouselslide.carousel_description}}</p>
+        <div>
+          <button mat-raised-button color="primary" type="button" (click)="openGame(carouselslide)">Play</button>
+        </div>
       </div>
+
     </ng-template>
 </ngb-carousel>

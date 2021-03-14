@@ -1,8 +1,14 @@
 <div *ngIf="game">
 
   <h3>Game Title: {{game.game_title}}</h3>
+  <p>
+    Credits to https://jsemu2.github.io/gba/
+    <br>
+    Resource used: {{game.game_iframelink}}
+  </p>
 
   <button mat-raised-button color="primary" type="button" (click)="back()">
     Back
   </button>
+  <iframe class="embeded-game" [src]="iframeLink"></iframe>
 </div>

@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
     // below is required so incase the route navigates
     // is to the same url but with different :id
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(): void {
@@ -31,10 +31,14 @@ export class HeaderComponent implements OnInit {
   }
 
   openCategory(category_value: string): void {
+    // below is required so incase the route navigates
+    // is to the same url but with different :id
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.navigateByUrl("category/" + category_value);
   }
 
   goToHome(){
+
     this.router.navigateByUrl("home");
   }
 

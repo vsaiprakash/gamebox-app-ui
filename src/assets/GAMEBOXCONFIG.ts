@@ -11,11 +11,14 @@ export const CATEGORIES_LIST = [
 
 export const RATINGS = [0,1,2,3,4,5];
 export const MAXRATING = 5;
+export const ROOTPATH = "gamebox-app-ui-demo";
 
 export const GAMEBOXCONFIG = {
-  APPNAME:"Game Box",
+  APPNAME: "Game Box",
+  ROOTPATH: ROOTPATH,
   LANGUAGES:[
-    { LANGUAGE_DISPLAYNAME: "English", LANGUAGE_VALUE: "en" }
+    { LANGUAGE_DISPLAYNAME: "English", LANGUAGE_VALUE: "en" },
+    { LANGUAGE_DISPLAYNAME: "Telugu", LANGUAGE_VALUE: "te" },
   ],
   GAMES:[
     new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "pokemon", "https://jsemu2.github.io/gba/launcher.html#pokemonred", CATEGORIES_LIST[1], RATINGS[4] ),

@@ -1,5 +1,5 @@
 <!-- ng-bootstrap component -->
-<ngb-carousel *ngIf="carouselslides">
+<ngb-carousel class="mat-elevation-z4" *ngIf="carouselslides">
 <ng-template ngbSlide *ngFor="let carouselslide of carouselslides">
       <div class="slide-image">
         <img [src]="carouselslide.carousel_img_link" alt="Random first slide" class="center">

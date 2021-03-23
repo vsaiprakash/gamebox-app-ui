@@ -38,11 +38,11 @@ $gamebox-app-ui-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { font-family: "Arial Rounded MT Bold"; font-size: 30px; }
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
 body{
-  color: white;
-  background-color: grey;
+  background-color: rgb(224, 224, 224);
 }

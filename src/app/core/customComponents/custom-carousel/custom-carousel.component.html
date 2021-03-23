@@ -1,7 +1,8 @@
+<!-- ng-bootstrap component -->
 <ngb-carousel *ngIf="carouselslides">
 <ng-template ngbSlide *ngFor="let carouselslide of carouselslides">
-      <div>
-        <img [src]="carouselslide.carousel_img_link" alt="Random first slide">
+      <div class="slide-image">
+        <img [src]="carouselslide.carousel_img_link" alt="Random first slide" class="center">
       </div>
       <div class="carousel-caption" >
         <h3>{{carouselslide.carousel_title}}</h3>

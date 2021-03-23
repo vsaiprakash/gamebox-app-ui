@@ -1,11 +1,11 @@
 <p>
   <mat-toolbar color="primary">
     <div class="heading" >
-      {{appName}}
-      <!-- <a href="#" (click)="goToHome()">
-      <a href="gamebox-app-ui-demo/">
 
-      </a> -->
+      <!-- <a href="#" (click)="goToHome()"> -->
+      <a href="/">
+        {{appName}}
+      </a>
     </div>
 
     <!-- href="/home"  [routerLink]="['home']"  -->
@@ -37,9 +37,17 @@
       </div>
     </mat-menu>
 
-    <button mat-icon-button matTooltip="Login">
+
+
+    <button *ngIf="loggedIn" mat-icon-button matTooltip="Profile" (click)="logout()">
+      <mat-icon>account_box</mat-icon>
+    </button>
+
+    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
       <mat-icon>login</mat-icon>
     </button>
-    <mat-slide-toggle matTooltip="Online/Offline"></mat-slide-toggle>
+
+
+    <mat-slide-toggle [(ngModel)]="isOnline" matTooltip="Online/Offline"></mat-slide-toggle>
   </mat-toolbar>
 </p>

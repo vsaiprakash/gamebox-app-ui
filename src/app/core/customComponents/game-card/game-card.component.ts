@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatCard } from '@angular/material/card';
 import { Router } from '@angular/router';
 
 
@@ -14,6 +15,9 @@ export class GameCardComponent implements OnInit {
   @Input() game: GameModel;
   router: Router;
 
+  @ViewChild('.custom-game-card')
+  customGameCard: any;
+
   constructor(router: Router) {
     this.router = router;
   }
@@ -24,5 +28,4 @@ export class GameCardComponent implements OnInit {
   openGame():void{
     this.router.navigateByUrl("gameLink/"+this.game.game_link);
   }
-
 }

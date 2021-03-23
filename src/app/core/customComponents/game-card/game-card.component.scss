@@ -4,4 +4,17 @@
   cursor: pointer;
 
   width: 500px;
+
+  // color: white;
+  background-color: rgb(187, 187, 187);
 }
+
+.hoverable-card:hover{
+  box-shadow: 3px 3px 9px #494949;
+}
+
+
+// body{
+//   color: white;
+//   background-color: grey;
+// }

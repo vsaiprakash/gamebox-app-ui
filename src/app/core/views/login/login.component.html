@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div>
+
+  <form [formGroup]="loginForm">
+
+    <label>
+      User Name:
+      <input type="text" formControlName="username">
+    </label>
+
+    <label>
+      Password:
+      <input type="text" formControlName="password">
+    </label>
+
+    <button mat-button (click)="login()">
+      Login
+    </button>
+
+  </form>
+
+  <div>
+    {{loginForm.get('username').value}}
+    <br>
+    {{loginForm.get('password').value}}
+  </div>
+
+</div>

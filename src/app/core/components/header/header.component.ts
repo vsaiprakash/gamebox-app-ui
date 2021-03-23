@@ -16,9 +16,13 @@ export class HeaderComponent implements OnInit {
   categories: CategoryModel[];
   router: Router;
 
+  isOnline: boolean;
+
+  loggedIn: boolean;
+
   constructor(router: Router) {
     this.router = router;
-
+    this.isOnline = false;
     // below is required so incase the route navigates
     // is to the same url but with different :id
     // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -28,6 +32,9 @@ export class HeaderComponent implements OnInit {
     this.appName = GAMEBOXCONFIG.APPNAME;
     this.languages = GAMEBOXCONFIG.LANGUAGES;
     this.categories = CATEGORIES_LIST;
+
+    this.loggedIn = false;
+    this.isOnline = false;
   }
 
   openCategory(category_value: string): void {
@@ -38,8 +45,16 @@ export class HeaderComponent implements OnInit {
   }
 
   goToHome(){
-
     this.router.navigateByUrl("home");
+  }
+
+  openLogin(){
+    // this.router.navigateByUrl("login");
+    this.loggedIn = true;
+  }
+
+  logout(){
+    this.loggedIn = false;
   }
 
 }

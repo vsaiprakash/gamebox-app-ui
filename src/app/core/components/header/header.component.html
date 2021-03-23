@@ -37,11 +37,12 @@
       </div>
     </mat-menu>
 
-
-
-    <button *ngIf="loggedIn" mat-icon-button matTooltip="Profile" (click)="logout()">
+    <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
       <mat-icon>account_box</mat-icon>
     </button>
+    <mat-menu #profileDropdown="matMenu" >
+        <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
 
     <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
       <mat-icon>login</mat-icon>

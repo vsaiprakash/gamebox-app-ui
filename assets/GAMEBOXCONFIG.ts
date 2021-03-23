@@ -25,7 +25,7 @@ export const GAMEBOXCONFIG = {
     new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", "https://jsemu2.github.io/gba/launcher.html#mortal_kombat", CATEGORIES_LIST[2], RATINGS[3] ),
   ],
   CAROUSEL_LIST:[
-    new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon-fire-red-carousel.jpg", "pokemon"),
-    new CarouselModel("Mortal Kombat", "Fighting & Action Game", "assets/images/mortalkombat-carousel.jpg", "mortalkombat")
+    new CarouselModel("Pokemon", "An RPG Pokemon Game", "assets/images/pokemon-go-carousel.jpg", "pokemon"),
+    new CarouselModel("Mortal Kombat", "Fighting & Action Game", "assets/images/kombat-pack-2.jpg", "mortalkombat")
   ]
 };

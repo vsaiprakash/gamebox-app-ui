@@ -21,14 +21,20 @@ ngb-carousel{
   text-shadow: 2px 2px 8px black;
 }
 
-// transition: 0.6s ease;
+div.gallery {
+  // height: 100px;
+  // width: 100px;
+  border: 1px solid black;
+  // position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
 
-// @-webkit-keyframes fade {
-//   from {opacity: .4}
-//   to {opacity: 1}
-// }
-
-// @keyframes fade {
-//   from {opacity: .4}
-//   to {opacity: 1}
-// }
+img.gallery {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

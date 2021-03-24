@@ -48,8 +48,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl("home");
   }
 
-  goToScoreboard(){
-    this.router.navigateByUrl("home");
+  goToScoreBoard(){
+    this.router.navigateByUrl("scoreBoard");
   }
 
   openLogin(){

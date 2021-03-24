@@ -4,10 +4,12 @@
 
     <div class="heading" >
       <!-- <a href="#" (click)="goToHome()"> -->
-      <a [routerLink]="['home']">
-        <mat-icon class="custom-gamepad-icon" color="accent">videogame_asset</mat-icon>
+        <!-- Router links not working properly so for now
+        Will use Programatic navigation -->
+        <mat-icon class="custom-gamepad-icon" color="accent" >videogame_asset</mat-icon>
+      <span (click)="goToHome()">
         {{appName}}
-      </a>
+      </span>
     </div>
 
     <!-- href="/home"  [routerLink]="['home']"  -->
@@ -17,9 +19,9 @@
 
     <span class="example-spacer"></span>
 
-    <button mat-button (click)="goToScoreboard()">
+    <a mat-button (click)="goToScoreBoard()">
       Score Board
-    </button>
+    </a>
 
     <button mat-button [matMenuTriggerFor]="categoriesMenu">
       Categories
@@ -47,11 +49,10 @@
       <mat-icon>account_box</mat-icon>
     </button>
     <mat-menu #profileDropdown="matMenu" >
-        <button mat-menu-item (click)="logout()">Logout</button>
+        <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button>
     </mat-menu>
 
-    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login"
-    [routerLink]="['login']" (click)="openLogin()">
+    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
       <mat-icon>login</mat-icon>
     </button>
 

@@ -28,6 +28,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ScoreBoardComponent } from './core/views/score-board/score-board.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     GameSelectedComponent,
     GameCardComponent,
     RatingsComponent,
-    CustomCarouselComponent
+    CustomCarouselComponent,
+    ScoreBoardComponent
 
   ],
   imports: [

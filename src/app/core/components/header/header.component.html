@@ -3,7 +3,7 @@
     <div class="heading" >
 
       <!-- <a href="#" (click)="goToHome()"> -->
-      <a href="/">
+      <a href="home">
         {{appName}}
       </a>
     </div>
@@ -24,8 +24,9 @@
     </button>
     <mat-menu #categoriesMenu="matMenu" >
       <div *ngFor="let category of categories">
-        <button mat-menu-item (click)="openCategory(category.category_value)" >
-
+        <button mat-menu-item
+        [routerLink]="['category', category.category_value]" >
+          <!-- (click)="openCategory(category.category_value)" -->
         <!-- [routerLink]="['category', category.category_value]" -->
           {{category.category_title}}
         </button>
@@ -48,7 +49,8 @@
         <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
 
-    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
+    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login"
+    [routerLink]="['login']" (click)="openLogin()">
       <mat-icon>login</mat-icon>
     </button>
 

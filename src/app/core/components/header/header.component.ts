@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
     this.languages = GAMEBOXCONFIG.LANGUAGES;
     this.categories = CATEGORIES_LIST;
 
-    this.loggedIn = false;
+    this.loggedIn = true;
     this.isOnline = false;
   }
 

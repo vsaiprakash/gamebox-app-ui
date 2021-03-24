@@ -1,5 +1,6 @@
-.example-spacer {
-  flex: 1 1 auto;
+.custom-gamepad-icon{
+  transform: rotate(-45deg);
+  margin: 10px;
 }
 
 .heading>a{
@@ -7,7 +8,6 @@
   color: white;
 }
 
-// .heading>a:hover{
-//   text-decoration: none;
-//   color: grey;
-// }
+.example-spacer {
+  flex: 1 1 auto;
+}

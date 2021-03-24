@@ -2,6 +2,7 @@ export class UserModel{
   private _username: string;
   private _email: string;
   private _password: string;
+  private _role: string;
 
   get username():string{
     return this._username;
@@ -27,4 +28,11 @@ export class UserModel{
     this._password = value;
   }
 
+  get role():string{
+    return this._role;
+  }
+
+  set role(value: string){
+    this._role = value;
+  }
 }

@@ -34,6 +34,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProfileDropdownCardComponent } from './core/customComponents/profile-dropdown-card/profile-dropdown-card.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MatInputModule } from '@angular/material/input';
     GameCardComponent,
     RatingsComponent,
     CustomCarouselComponent,
-    ScoreBoardComponent
+    ScoreBoardComponent,
+    ProfileDropdownCardComponent
 
   ],
   imports: [

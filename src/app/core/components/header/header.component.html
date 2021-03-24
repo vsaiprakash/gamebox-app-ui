@@ -48,8 +48,9 @@
     <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
       <mat-icon>account_circle</mat-icon>
     </button>
-    <mat-menu #profileDropdown="matMenu" >
-        <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button>
+    <mat-menu #profileDropdown="matMenu">
+        <app-profile-dropdown-card class="profile-dropdown" (logoutEvent)="logout()" ></app-profile-dropdown-card>
+        <!-- <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button> -->
     </mat-menu>
 
     <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">

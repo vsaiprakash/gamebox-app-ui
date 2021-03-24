@@ -1,14 +1,30 @@
-<div *ngIf="game">
+<div *ngIf="game" class="custom-body">
+  <div class="row">
+    <div class="col-1">
+      <button mat-mini-fab color="primary" type="button" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-11">
+      <h2>Title: <strong>{{game.game_title}}</strong></h2>
+    </div>
+  </div>
 
-  <h3>Game Title: {{game.game_title}}</h3>
   <p>
-    Credits to https://jsemu2.github.io/gba/
+    <strong>Credits to </strong> https://jsemu2.github.io/gba/
     <br>
-    Resource used: {{game.game_iframelink}}
+    <strong>Resource used: </strong> {{game.game_iframelink}}
   </p>
 
-  <button mat-raised-button color="primary" type="button" (click)="back()">
-    Back
-  </button>
-  <iframe class="embeded-game" [src]="iframeLink"></iframe>
+  <div class="container">
+    <div class="container">
+      <div class="right-float">
+
+      </div>
+
+    </div>
+    <div class="row">
+      <iframe class="embeded-game" [src]="iframeLink"></iframe>
+    </div>
+  </div>
 </div>

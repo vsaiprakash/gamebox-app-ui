@@ -1,6 +1,19 @@
-<h3>{{category.category_title}}</h3>
-<p>{{category.category_description}}</p>
+<div class="custom-body">
+  <div class="row">
+    <div class="col-1">
+      <button mat-mini-fab color="primary" type="button" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-11">
+      <h2><strong>{{category.category_title}}</strong></h2>
+    </div>
+  </div>
 
-<div *ngFor="let game of games">
-  <app-game-card [game]="(game)"></app-game-card>
+
+  <p>{{category.category_description}}</p>
+
+  <div *ngFor="let game of games">
+    <app-game-card [game]="(game)"></app-game-card>
+  </div>
 </div>

@@ -16,6 +16,9 @@ import { GameCardComponent } from './core/customComponents/game-card/game-card.c
 import { RatingsComponent } from './core/customComponents/ratings/ratings.component';
 import { CustomCarouselComponent } from './core/customComponents/custom-carousel/custom-carousel.component';
 
+//Custom Services
+import { NavigationService } from './core/services/navigation.service';
+
 //Angular Material Modules
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -58,7 +61,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatMenuModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

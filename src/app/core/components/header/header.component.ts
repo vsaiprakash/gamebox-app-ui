@@ -14,14 +14,14 @@ export class HeaderComponent implements OnInit {
   appName: string;
   languages: any[];
   categories: CategoryModel[];
-  router: Router;
+  // router: Router;
 
   isOnline: boolean;
 
   loggedIn: boolean;
 
-  constructor(router: Router) {
-    this.router = router;
+  constructor(private router: Router) {
+    // this.router = router;
     this.isOnline = false;
     // below is required so incase the route navigates
     // is to the same url but with different :id
@@ -53,7 +53,6 @@ export class HeaderComponent implements OnInit {
   }
 
   openLogin(){
-    // this.router.navigateByUrl("login");
     this.loggedIn = true;
   }
 

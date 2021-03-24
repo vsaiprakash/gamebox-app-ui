@@ -1,9 +1,10 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { CATEGORIES_LIST, GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
 import { GameModel } from '../../models/game-model';
+import { NavigationService } from './../../services/navigation.service';
 
 @Component({
   selector: 'app-category-selected',
@@ -16,11 +17,13 @@ export class CategorySelectedComponent implements OnInit {
   games: GameModel[];
 
   // location: Location;
-  activatedRoute: ActivatedRoute;
+  // activatedRoute: ActivatedRoute;
 
-  constructor(activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private navigation: NavigationService) {
     // this.location = location;
-    this.activatedRoute = activatedRoute;
+    // this.activatedRoute = activatedRoute;
 
   }
 
@@ -51,5 +54,7 @@ export class CategorySelectedComponent implements OnInit {
       });
     }
   }
-
+  back(){
+    this.navigation.back();
+  }
 }

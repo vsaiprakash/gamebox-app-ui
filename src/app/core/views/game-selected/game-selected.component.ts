@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SecurityContext } from '@angular/core'
 
 import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
 import { GameModel } from '../../models/game-model';
-
+import { NavigationService } from './../../services/navigation.service';
 
 @Component({
   selector: 'app-game-selected',
@@ -16,15 +16,18 @@ import { GameModel } from '../../models/game-model';
 export class GameSelectedComponent implements OnInit {
 
   location: Location;
-  activatedRoute: ActivatedRoute;
+  // activatedRoute: ActivatedRoute;
   // sanitizer: DomSanitizer;
 
   game: GameModel;
   iframeLink: any;
 
-  constructor(location: Location, activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer) {
-    this.location = location;
-    this.activatedRoute = activatedRoute;
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private sanitizer: DomSanitizer,
+              private navigation: NavigationService) {
+    // this.location = location;
+    // this.activatedRoute = activatedRoute;
     this.sanitizer = sanitizer;
   }
 
@@ -42,7 +45,7 @@ export class GameSelectedComponent implements OnInit {
   }
 
   back(){
-    this.location.back();
+    this.navigation.back();
   }
 
 }

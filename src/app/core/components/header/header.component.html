@@ -5,7 +5,7 @@
     <div class="heading" >
       <!-- <a href="#" (click)="goToHome()"> -->
       <a [routerLink]="['home']">
-        <mat-icon class="custom-gamepad-icon">videogame_asset</mat-icon>
+        <mat-icon class="custom-gamepad-icon" color="accent">videogame_asset</mat-icon>
         {{appName}}
       </a>
     </div>
@@ -27,8 +27,7 @@
     <mat-menu #categoriesMenu="matMenu" >
       <div *ngFor="let category of categories">
         <button mat-menu-item
-        [routerLink]="['category', category.category_value]" >
-          <!-- (click)="openCategory(category.category_value)" -->
+          (click)="openCategory(category.category_value)" >
         <!-- [routerLink]="['category', category.category_value]" -->
           {{category.category_title}}
         </button>

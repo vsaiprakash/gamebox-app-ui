@@ -1,27 +1,41 @@
-<div>
+<div class="login-body">
+  <mat-card>
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Login</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
 
-  <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm">
 
-    <label>
-      User Name:
-      <input type="text" formControlName="username">
-    </label>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username" class="custom-input">
+          <button mat-icon-button matSuffix disabled>
+            <mat-icon>account_circle</mat-icon>
+          </button>
 
-    <label>
-      Password:
-      <input type="text" formControlName="password">
-    </label>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" class="custom-input">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <!-- <br>
 
-    <button mat-button (click)="login()">
-      Login
-    </button>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+        <button mat-raised-button (click)="cancel()">Cancel</button> -->
+      </form>
 
-  </form>
-
-  <div>
-    {{loginForm.get('username').value}}
-    <br>
-    {{loginForm.get('password').value}}
-  </div>
-
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+      <button mat-raised-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

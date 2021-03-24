@@ -54,6 +54,7 @@ export class HeaderComponent implements OnInit {
 
   openLogin(){
     this.loggedIn = true;
+    this.router.navigateByUrl('login');
   }
 
   logout(){

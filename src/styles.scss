@@ -54,3 +54,14 @@ body{
 .right-float{
   float: right;
 }
+
+// Snack Bars
+.failure-snackbar{
+  background-color: rgb(59, 7, 0);
+  color: rgb(255, 189, 189);
+}
+
+.success-snackbar{
+  background-color: black;
+  color: white;
+}

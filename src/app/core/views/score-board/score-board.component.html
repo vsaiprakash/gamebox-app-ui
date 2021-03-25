@@ -1,1 +1,14 @@
-<p>score-board works!</p>
+<div *ngIf="ELEMENT_DATA" class="custom-body">
+  <div class="row">
+    <div class="col-1">
+      <button mat-mini-fab color="primary" type="button" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-11">
+      <h2><strong>Score Board</strong></h2>
+    </div>
+  </div>
+
+  <app-custom-table [inputDatasource]="ELEMENT_DATA" [pageSizeOptions]=[5,10,15] ></app-custom-table>
+</div>

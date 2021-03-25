@@ -18,6 +18,8 @@ import { ScoreBoardComponent } from './core/views/score-board/score-board.compon
 import { GameCardComponent } from './core/customComponents/game-card/game-card.component';
 import { RatingsComponent } from './core/customComponents/ratings/ratings.component';
 import { CustomCarouselComponent } from './core/customComponents/custom-carousel/custom-carousel.component';
+import { ProfileDropdownCardComponent } from './core/customComponents/profile-dropdown-card/profile-dropdown-card.component';
+import { CustomTableComponent } from './core/customComponents/custom-table/custom-table.component';
 
 //Custom Services
 import { NavigationService } from './core/services/navigation.service';
@@ -34,7 +36,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ProfileDropdownCardComponent } from './core/customComponents/profile-dropdown-card/profile-dropdown-card.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { ProfileDropdownCardComponent } from './core/customComponents/profile-dr
     RatingsComponent,
     CustomCarouselComponent,
     ScoreBoardComponent,
-    ProfileDropdownCardComponent
+    ProfileDropdownCardComponent,
+    CustomTableComponent
 
   ],
   imports: [
@@ -71,7 +76,10 @@ import { ProfileDropdownCardComponent } from './core/customComponents/profile-dr
     MatTooltipModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]

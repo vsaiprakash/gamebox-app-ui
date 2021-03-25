@@ -1,8 +1,23 @@
 .custom-gamepad-icon{
   transform: rotate(-45deg);
-  margin: 10px;
+  margin: 5px;
 }
-// .heading>
+// > a
+.heading:hover, .heading-score:hover,
+ .heading-category:hover, .heading-language:hover,
+  .heading-profile:hover{
+  color: yellow;
+}
+
+.heading-score:focus, .heading-category:focus,
+  .heading-language:focus, .heading-profile:focus{
+  color: yellow;
+}
+
+mat-icon > a:hover{
+  color: yellow;
+}
+
 a{
   text-decoration: none;
   color: white;
@@ -23,7 +38,7 @@ a{
 .toggle-label-offline{
   font-size: small;
   padding-top:7px;
-  padding-left: 2px;
+  padding-left: 4px;
   padding-right: 10px;
   color: yellow;
 }

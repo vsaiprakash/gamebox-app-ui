@@ -12,3 +12,18 @@ a{
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.toggle-label-online{
+  font-size: small;
+  padding-top:7px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.toggle-label-offline{
+  font-size: small;
+  padding-top:7px;
+  padding-left: 2px;
+  padding-right: 10px;
+  color: yellow;
+}

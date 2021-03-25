@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
@@ -61,4 +61,14 @@ export class HeaderComponent implements OnInit {
     this.loggedIn = false;
   }
 
+  toggle(){
+    if(this.isOnline){
+      document.getElementById("online").style.color = "yellow";
+      document.getElementById("offline").style.color = "white";
+    }
+    else{
+      document.getElementById("online").style.color = "white";
+      document.getElementById("offline").style.color = "yellow";
+    }
+  }
 }

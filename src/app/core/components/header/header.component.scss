@@ -5,12 +5,12 @@
 // > a
 .heading:hover, .heading-score:hover,
  .heading-category:hover, .heading-language:hover,
-  .heading-profile:hover{
+  .heading-profile:hover, .heading-login:hover{
   color: yellow;
 }
 
 .heading-score:focus, .heading-category:focus,
-  .heading-language:focus, .heading-profile:focus{
+  .heading-language:focus, .heading-profile:focus, .heading-login:focus{
   color: yellow;
 }
 

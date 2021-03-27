@@ -65,3 +65,13 @@ body{
   background-color: black;
   color: white;
 }
+
+.grid-container{
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+}
+
+app-game-card{
+  max-width: 500px;
+}

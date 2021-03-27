@@ -1,73 +1,74 @@
 <p class="mat-elevation-z4">
-  <mat-toolbar color="primary">
+<mat-toolbar color="primary">
 
 
-    <div class="heading">
-      <!-- <a href="#" (click)="goToHome()"> -->
-      <!-- Router links not working properly so for now
+  <div class="heading">
+    <!-- <a href="#" (click)="goToHome()"> -->
+    <!-- Router links not working properly so for now
         Will use Programatic navigation -->
-      <mat-icon class="custom-gamepad-icon" >videogame_asset</mat-icon>
-      <a (click)="goToHome()">
-        {{appName}}
-      </a>
-    </div>
+    <mat-icon class="custom-gamepad-icon">videogame_asset</mat-icon>
+    <a (click)="goToHome()">
+      {{appName}}
+    </a>
+  </div>
 
-    <!-- href="/home"  [routerLink]="['home']"  -->
-    <!-- <button mat-button>
+  <!-- href="/home"  [routerLink]="['home']"  -->
+  <!-- <button mat-button>
       {{appName}}
     </button> -->
 
-    <span class="example-spacer"></span>
-    <div class="heading-score">
-      <button mat-icon-button (click)="goToScoreBoard()" matTooltip="Score Board">
-        <mat-icon>sports_score</mat-icon>
-      </button>
-    </div>
+  <span class="example-spacer"></span>
+  <div class="heading-score">
+    <button mat-icon-button (click)="goToScoreBoard()" matTooltip="Score Board">
+      <mat-icon>sports_score</mat-icon>
+    </button>
+  </div>
 
-    <div class="heading-category">
-      <button mat-icon-button [matMenuTriggerFor]="categoriesMenu" matTooltip="Categories">
-        <mat-icon>category</mat-icon>
+  <div class="heading-category">
+    <button mat-icon-button [matMenuTriggerFor]="categoriesMenu" matTooltip="Categories">
+      <mat-icon>category</mat-icon>
+    </button>
+  </div>
+  <mat-menu #categoriesMenu="matMenu">
+    <div *ngFor="let category of categories">
+      <button mat-menu-item (click)="openCategory(category.category_value)">
+        <!-- [routerLink]="['category', category.category_value]" -->
+        {{category.category_title}}
       </button>
     </div>
-    <mat-menu #categoriesMenu="matMenu">
-      <div *ngFor="let category of categories">
-        <button mat-menu-item (click)="openCategory(category.category_value)">
-          <!-- [routerLink]="['category', category.category_value]" -->
-          {{category.category_title}}
-        </button>
-      </div>
-    </mat-menu>
+  </mat-menu>
 
-    <div class="heading-language">
-      <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="Language">
-        <mat-icon>language</mat-icon>
-      </button>
+  <div class="heading-language">
+    <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="Language">
+      <mat-icon>language</mat-icon>
+    </button>
+  </div>
+  <mat-menu #languageMenu="matMenu">
+    <div *ngFor="let language of languages">
+      <button mat-menu-item>{{language.LANGUAGE_DISPLAYNAME}}</button>
     </div>
-    <mat-menu #languageMenu="matMenu">
-      <div *ngFor="let language of languages">
-        <button mat-menu-item>{{language.LANGUAGE_DISPLAYNAME}}</button>
-      </div>
-    </mat-menu>
+  </mat-menu>
 
-    <div class="heading-profile">
-      <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
-        <mat-icon>account_circle</mat-icon>
-      </button>
-    </div>
-    <mat-menu #profileDropdown="matMenu">
-      <app-profile-dropdown-card class="profile-dropdown" (logoutEvent)="logout()"></app-profile-dropdown-card>
-      <!-- <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button> -->
-    </mat-menu>
+  <div class="heading-profile">
+    <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+  <mat-menu #profileDropdown="matMenu">
+    <app-profile-dropdown-card class="profile-dropdown" (logoutEvent)="logout()"></app-profile-dropdown-card>
+    <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button>
+  </mat-menu>
 
-    <div class="heading-login">
-      <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
-        <mat-icon>login</mat-icon>
-      </button>
-    </div>
+  <div class="heading-login">
+    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
+      <mat-icon>login</mat-icon>
+    </button>
+  </div>
+  <div>
     <label class="toggle-label-offline" id="offline">Offline</label>
     <mat-slide-toggle class="custom-toggle" [(ngModel)]="isOnline" (change)="toggle()">
-    <label class="toggle-label-online" id="online">Online</label>
-
     </mat-slide-toggle>
-  </mat-toolbar>
+    <label class="toggle-label-online" id="online">Online</label>
+  </div>
+</mat-toolbar>
 </p>

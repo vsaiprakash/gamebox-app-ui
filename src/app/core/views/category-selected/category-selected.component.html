@@ -13,7 +13,7 @@
 
   <p>{{category.category_description}}</p>
 
-  <div *ngFor="let game of games">
+  <div *ngFor="let game of games" class="grid-container">
     <app-game-card [game]="(game)"></app-game-card>
   </div>
 </div>

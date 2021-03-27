@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserModel } from '../../models/user-model';
 import { NavigationService } from './../../services/navigation.service';
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
+import { FirebaseService } from '../../services/firebase.service';
 
 
 @Component({
@@ -29,12 +30,18 @@ export class LoginComponent implements OnInit {
 
   constructor(private _snackBar: MatSnackBar,
               private navigation: NavigationService,
-              private router: Router) {
+              private router: Router,
+              private firebaseService: FirebaseService) {
     this.successfullLoginMessage = "Login Success";
     this.failureLoginMessage = "Login Failed";
   }
 
   ngOnInit(){
+
+  }
+
+  async loginWithFirebase(){
+    await this.firebaseService.signIn(this.loginForm.get('username').value, this.loginForm.get('password').value)
 
   }
 

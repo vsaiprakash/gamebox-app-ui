@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +38,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AngularFireModule } from '@angular/fire';
+import { FirebaseService } from './core/services/firebase.service';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCzALdaNf9DVmQqEBI_wqTfFVLWfaQSuoE",
+  authDomain: "gamebox-app-backend-services.firebaseapp.com",
+  projectId: "gamebox-app-backend-services",
+  storageBucket: "gamebox-app-backend-services.appspot.com",
+  messagingSenderId: "595345511278",
+  appId: "1:595345511278:web:c235a6605b20229400a77f"
+};
 
 @NgModule({
   declarations: [
@@ -64,7 +74,9 @@ import { MatSortModule } from '@angular/material/sort';
     FormsModule,
     ReactiveFormsModule,
 
-    NgbModule,
+    //Backend Service
+    AngularFireModule.initializeApp(firebaseConfig),
+
     // Angular Material Modules
     MatIconModule,
     MatToolbarModule,
@@ -81,7 +93,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [NavigationService],
+  providers: [NavigationService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

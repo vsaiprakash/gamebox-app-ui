@@ -15,7 +15,6 @@ export class FirebaseService {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                sessionStorage.setItem("user", JSON.stringify(res.user));
               })
               .catch((reason)=>{
                 console.log("ERROR REASON: "+JSON.stringify(reason));
@@ -27,14 +26,33 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                sessionStorage.setItem("user", JSON.stringify(res.user));
               });
   }
 
   logout(){
     this.firebaseAuth.signOut();
-    sessionStorage.removeItem("user");
   }
 
+  getCurrentUserDetails(){
+    this.firebaseAuth.currentUser.then((user)=>{
+      let userDetails = {
+        displayName: user.displayName,
+        email: user.email
+        // photoUrl: user.photoURL
+      }
+      console.log("CURRENT USER: "+JSON.stringify(userDetails));
+    })
+    .catch((reason)=>{
+      console.log("No one logged In, "+JSON.stringify(reason));
+    })
+  }
 
+  updateCurrentUserDisplayName(displayName: string){
+    this.firebaseAuth.currentUser.then((user)=>{
+      user.updateProfile({
+        "displayName": displayName
+      })
+      // this.firebaseAuth.updateCurrentUser()
+    });
+  }
 }

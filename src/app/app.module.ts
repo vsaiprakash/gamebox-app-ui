@@ -40,6 +40,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
 
@@ -75,6 +77,9 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+
+    //ng-bootstrap used for carousel in home page
+    NgbModule,
 
     //Backend Service
     AngularFireModule.initializeApp(firebaseConfig),

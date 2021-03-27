@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-header',
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
   loggedIn: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private firebaseService: FirebaseService) {
     // this.router = router;
     this.isOnline = false;
     // below is required so incase the route navigates
@@ -58,6 +59,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+    this.firebaseService.logout();
     this.loggedIn = false;
   }
 

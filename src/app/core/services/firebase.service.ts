@@ -11,10 +11,11 @@ export class FirebaseService {
   constructor(private firebaseAuth: AngularFireAuth) { }
 
   async signIn(email: string, password: string){
+    console.log("USERNAME: "+email+" PASSWORD: "+password);
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                localStorage.setItem("user", JSON.stringify(res.user));
+                sessionStorage.setItem("user", JSON.stringify(res.user));
               })
               .catch((reason)=>{
                 console.log("ERROR REASON: "+JSON.stringify(reason));
@@ -22,15 +23,18 @@ export class FirebaseService {
   }
 
   async signUp(email: string, password: string){
+    console.log("USERNAME: "+email+" PASSWORD: "+password);
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                localStorage.setItem("user", JSON.stringify(res.user));
+                sessionStorage.setItem("user", JSON.stringify(res.user));
               });
   }
 
   logout(){
     this.firebaseAuth.signOut();
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
   }
+
+
 }

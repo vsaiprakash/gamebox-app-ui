@@ -38,6 +38,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
 
@@ -91,7 +93,8 @@ const firebaseConfig = {
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatTabsModule
   ],
   providers: [NavigationService, FirebaseService],
   bootstrap: [AppComponent]

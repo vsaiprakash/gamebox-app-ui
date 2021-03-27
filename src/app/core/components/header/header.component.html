@@ -3,19 +3,11 @@
 
 
   <div class="heading">
-    <!-- <a href="#" (click)="goToHome()"> -->
-    <!-- Router links not working properly so for now
-        Will use Programatic navigation -->
     <mat-icon class="custom-gamepad-icon">videogame_asset</mat-icon>
     <a (click)="goToHome()">
       {{appName}}
     </a>
   </div>
-
-  <!-- href="/home"  [routerLink]="['home']"  -->
-  <!-- <button mat-button>
-      {{appName}}
-    </button> -->
 
   <span class="example-spacer"></span>
   <div class="heading-score">
@@ -32,7 +24,6 @@
   <mat-menu #categoriesMenu="matMenu">
     <div *ngFor="let category of categories">
       <button mat-menu-item (click)="openCategory(category.category_value)">
-        <!-- [routerLink]="['category', category.category_value]" -->
         {{category.category_title}}
       </button>
     </div>

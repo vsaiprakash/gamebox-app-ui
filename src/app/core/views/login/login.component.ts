@@ -20,10 +20,17 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
+  successfullSignUpMessage: string;
   successfullLoginMessage: string;
+  failureSignUpMessage: string;
   failureLoginMessage: string;
 
   loginForm: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
+
+  signUpForm: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
@@ -34,6 +41,9 @@ export class LoginComponent implements OnInit {
               private firebaseService: FirebaseService) {
     this.successfullLoginMessage = "Login Success";
     this.failureLoginMessage = "Login Failed";
+
+    this.successfullSignUpMessage = "Sign Up Success";
+    this.failureSignUpMessage = "Sign Up Failed";
   }
 
   ngOnInit(){
@@ -41,19 +51,38 @@ export class LoginComponent implements OnInit {
   }
 
   async loginWithFirebase(){
-    await this.firebaseService.signIn(this.loginForm.get('username').value, this.loginForm.get('password').value)
+    await this.firebaseService
+                .signIn(this.loginForm.get('username').value, this.loginForm.get('password').value)
+                .then(()=>{
+                  this.onSuccessfull(this.successfullLoginMessage);
+                  this.router.navigateByUrl("home");
+                })
+                .catch((reason)=>{
+                  this.onFailure(this.failureLoginMessage);
+                });
+  }
 
+  async signUpWithFirebase(){
+    await this.firebaseService
+                .signUp(this.signUpForm.get('username').value, this.signUpForm.get('password').value)
+                .then(()=>{
+                  this.onSuccessfull(this.successfullSignUpMessage);
+                  this.router.navigateByUrl("home");
+                })
+                .catch((reason)=>{
+                  this.onFailure(this.failureSignUpMessage);
+                });;
   }
 
   login(){
     // alert(this.loginForm.get('username').value);
     if( LOCALUSERS.username.includes(this.loginForm.get('username').value) &&
         LOCALUSERS.password.includes(this.loginForm.get('password').value)){
-          this.onSuccessfullLogin();
+          this.onSuccessfull(this.successfullLoginMessage);
           this.router.navigateByUrl("home");
     }
     else{
-      this.onFailureLogin();
+      this.onFailure(this.failureLoginMessage);
     }
   }
 
@@ -61,14 +90,14 @@ export class LoginComponent implements OnInit {
     this.navigation.back();
   }
 
-  onSuccessfullLogin(){
-    this._snackBar.open(this.successfullLoginMessage, "OK", {
+  onSuccessfull(message: string){
+    this._snackBar.open(message, "OK", {
       duration: 2000, panelClass: ['success-snackbar']
     });
   }
 
-  onFailureLogin(){
-    this._snackBar.open(this.failureLoginMessage, "OK", {
+  onFailure(message: string){
+    this._snackBar.open(message, "OK", {
       duration: 2000, panelClass: ['failure-snackbar']
     });
   }

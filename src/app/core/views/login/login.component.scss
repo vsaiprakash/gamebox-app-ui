@@ -5,6 +5,37 @@
   align-items: center;
 }
 
+.login-body{
+  padding-top: 10px;
+}
+
+.signup-body{
+  padding-top: 10px;
+}
+
+.custom-mat-form{
+  width: 100%;
+}
+
 .custom-input{
   width: 100%;
+}
+
+.form-actions{
+  display: grid;
+  grid-column-gap: 10px;
+  padding-bottom: 5px;
+  // grid-auto-columns: 40px;
+}
+
+.login-button {
+  grid-area: 1 / 1;
+}
+
+.signup-button {
+  grid-area: 1 / 1;
+}
+
+.cancel-button {
+  grid-area: 1 / 2;
 }

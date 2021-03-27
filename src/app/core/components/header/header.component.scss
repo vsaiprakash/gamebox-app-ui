@@ -14,6 +14,12 @@
   color: yellow;
 }
 
+.heading:active, .heading-score:active,
+ .heading-category:active, .heading-language:active,
+  .heading-profile:active, .heading-login:active{
+  color: yellow;
+}
+
 mat-icon > a:hover{
   color: yellow;
 }

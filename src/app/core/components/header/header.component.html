@@ -46,8 +46,15 @@
     </button>
   </div>
   <mat-menu #profileDropdown="matMenu">
-    <app-profile-dropdown-card class="profile-dropdown" (logoutEvent)="logout()"></app-profile-dropdown-card>
-    <button mat-menu-item (click)="logout()" matTooltip="Logout">Logout</button>
+    <app-profile-dropdown-card class="profile-dropdown" [isLoggedIn]="loggedIn" (logoutEvent)="logout()"></app-profile-dropdown-card>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+    <button mat-menu-item>
+      <mat-icon>manage_accounts</mat-icon>
+      Profile
+    </button>
   </mat-menu>
 
   <div class="heading-login">

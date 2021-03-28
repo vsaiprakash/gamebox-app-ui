@@ -1,18 +1,7 @@
-<mat-card class="profile-card">
+<mat-card class="profile-card" *ngIf="user">
   <mat-card-header>
     <div mat-card-avatar class="profile-header-image"></div>
-    <mat-card-title>{{user.username}}</mat-card-title>
-    <mat-card-subtitle>{{user.role}}</mat-card-subtitle>
+    <mat-card-title>{{user.displayName}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
   </mat-card-header>
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-  <mat-card-content>
-    <button mat-button (click)="logout()" matTooltip="Logout">
-      <mat-icon>logout</mat-icon>
-      Logout
-    </button><br>
-    <button mat-button matTooltip="Settings">
-      <mat-icon>settings</mat-icon>
-      Settings
-    </button>
-  </mat-card-content>
 </mat-card>

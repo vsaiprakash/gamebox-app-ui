@@ -20,18 +20,18 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
-  successfullSignUpMessage: string;
-  successfullLoginMessage: string;
+  successfulSignUpMessage: string;
+  successfulLoginMessage: string;
   failureSignUpMessage: string;
   failureLoginMessage: string;
 
   loginForm: FormGroup = new FormGroup({
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
   });
 
   signUpForm: FormGroup = new FormGroup({
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
   });
 
@@ -39,10 +39,10 @@ export class LoginComponent implements OnInit {
               private navigation: NavigationService,
               private router: Router,
               private firebaseService: FirebaseService) {
-    this.successfullLoginMessage = "Login Success";
+    this.successfulLoginMessage = "Login Success";
     this.failureLoginMessage = "Login Failed";
 
-    this.successfullSignUpMessage = "Sign Up Success";
+    this.successfulSignUpMessage = "Sign Up Success";
     this.failureSignUpMessage = "Sign Up Failed";
   }
 
@@ -52,9 +52,9 @@ export class LoginComponent implements OnInit {
 
   async loginWithFirebase(){
     await this.firebaseService
-                .signIn(this.loginForm.get('username').value, this.loginForm.get('password').value)
+                .signIn(this.loginForm.get('email').value, this.loginForm.get('password').value)
                 .then(()=>{
-                  this.onSuccessfull(this.successfullLoginMessage);
+                  this.onSuccessful(this.successfulLoginMessage);
                   this.router.navigateByUrl("home");
                 })
                 .catch((reason)=>{
@@ -64,9 +64,9 @@ export class LoginComponent implements OnInit {
 
   async signUpWithFirebase(){
     await this.firebaseService
-                .signUp(this.signUpForm.get('username').value, this.signUpForm.get('password').value)
+                .signUp(this.signUpForm.get('email').value, this.signUpForm.get('password').value)
                 .then(()=>{
-                  this.onSuccessfull(this.successfullSignUpMessage);
+                  this.onSuccessful(this.successfulSignUpMessage);
                   this.router.navigateByUrl("home");
                 })
                 .catch((reason)=>{
@@ -76,9 +76,10 @@ export class LoginComponent implements OnInit {
 
   login(){
     // alert(this.loginForm.get('username').value);
-    if( LOCALUSERS.username.includes(this.loginForm.get('username').value) &&
+    if( LOCALUSERS.username.includes(this.loginForm.get('email').value) &&
         LOCALUSERS.password.includes(this.loginForm.get('password').value)){
-          this.onSuccessfull(this.successfullLoginMessage);
+          this.onSuccessful(this.successfulLoginMessage);
+          document.location.reload();
           this.router.navigateByUrl("home");
     }
     else{
@@ -90,7 +91,7 @@ export class LoginComponent implements OnInit {
     this.navigation.back();
   }
 
-  onSuccessfull(message: string){
+  onSuccessful(message: string){
     this._snackBar.open(message, "OK", {
       duration: 2000, panelClass: ['success-snackbar']
     });

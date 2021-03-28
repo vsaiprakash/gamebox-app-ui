@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
   isOnline: boolean;
   loggedIn: boolean;
+  user: UserModel;
 
   constructor(private router: Router,
     private firebaseService: FirebaseService) {
@@ -36,15 +37,39 @@ export class HeaderComponent implements OnInit {
       localStorage.removeItem("user");
     }
 
-    let timer = setInterval(() => {
-      if(localStorage.getItem("user")){
-        this.loggedIn = true;;
-        clearInterval(timer);
-      }
-    }, 1000);
+    // let timer = setInterval(() => {
+    //   if(localStorage.getItem("user")){
+    //     this.loggedIn = true;
+    //     this.user = JSON.parse(localStorage.getItem("user"));
+    //     clearInterval(timer);
+    //   }
+    // }, 500);
+    this.startIsLoggedInTimer();
   }
 
   ngOnInit(): void { }
+
+  startIsLoggedInTimer(){
+    let timer = setInterval(()=>{
+      if(localStorage.getItem("user")){
+        this.loggedIn = true;
+        this.user = JSON.parse(localStorage.getItem("user"));
+        this.startIsLoggedOutTimer();
+        clearInterval(timer);
+      }
+    }, 500)
+  }
+
+  startIsLoggedOutTimer(){
+    let timer = setInterval(()=>{
+      if(localStorage.getItem("user")==null){
+        this.loggedIn = false;
+        this.user = JSON.parse(localStorage.getItem("user"));
+        this.startIsLoggedInTimer();
+        clearInterval(timer);
+      }
+    }, 500)
+  }
 
   openCategory(category_value: string): void {
     // below is required so incase the route navigates

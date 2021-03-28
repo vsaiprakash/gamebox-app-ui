@@ -74,19 +74,6 @@ export class LoginComponent implements OnInit {
                 });;
   }
 
-  login(){
-    // alert(this.loginForm.get('username').value);
-    if( LOCALUSERS.username.includes(this.loginForm.get('email').value) &&
-        LOCALUSERS.password.includes(this.loginForm.get('password').value)){
-          this.onSuccessful(this.successfulLoginMessage);
-          document.location.reload();
-          this.router.navigateByUrl("home");
-    }
-    else{
-      this.onFailure(this.failureLoginMessage);
-    }
-  }
-
   cancel(){
     this.navigation.back();
   }

@@ -1,3 +1,5 @@
 export const LOCALUSERS = {
-  username: "demo", password: "demo"
+  email: "demo@demo.com",
+  displayName: "demo",
+  photoUrl: "assets/images/profile.png"
 };

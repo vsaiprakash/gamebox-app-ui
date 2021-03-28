@@ -2,7 +2,16 @@
   max-width: 400px;
 }
 
-.profile-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.display-name{
+  overflow-wrap: anywhere;
+}
+
+.email{
+  overflow-wrap: anywhere;
+}
+
+img{
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
 }

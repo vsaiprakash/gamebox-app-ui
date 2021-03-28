@@ -20,7 +20,7 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges {
   constructor(private firebaseService: FirebaseService) {
     this.firebaseService.getCurrentUserDetails().then((user)=>{
       if(user){
-        this.user = new UserModel(user.email, user.displayName);
+        this.user = new UserModel(user.email, user.displayName, user.photoUrl);
       }
     });
   }

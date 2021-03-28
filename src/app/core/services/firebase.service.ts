@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { LOCALUSERS } from 'src/assets/LOCALUSERS';
 import { UserModel } from '../models/user-model';
 
 @Injectable({
@@ -16,7 +17,7 @@ export class FirebaseService {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                let userModel = new UserModel(res.user.email, res.user.displayName)
+                let userModel = new UserModel(res.user.email, res.user.displayName, res.user.photoURL)
                 localStorage.setItem("user", JSON.stringify(userModel));
                 console.log("Signed In Successfully");
               })
@@ -30,9 +31,14 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                let userModel = new UserModel(res.user.email, res.user.displayName)
-                localStorage.setItem("user", JSON.stringify(userModel));
-                console.log("SignUp Successful");
+                let userModel = new UserModel(res.user.email, res.user.email, LOCALUSERS.photoUrl)
+                res.user.updateProfile({
+                  displayName: res.user.email,
+                  photoURL: LOCALUSERS.photoUrl
+                }).then(()=>{
+                  localStorage.setItem("user", JSON.stringify(userModel));
+                  console.log("SignUp Successful");
+                });
               });
   }
 
@@ -47,7 +53,9 @@ export class FirebaseService {
     let userModel = null;
 
     await this.firebaseAuth.currentUser.then((user)=>{
-      userModel = new UserModel(user.email, user.displayName);
+      userModel = new UserModel(user.email,
+                                user.displayName?user.displayName: user.email,
+                                LOCALUSERS.photoUrl);
       console.log("CURRENT USER: "+JSON.stringify(userModel));
       return userModel;
     })
@@ -62,8 +70,7 @@ export class FirebaseService {
     this.firebaseAuth.currentUser.then((user)=>{
       user.updateProfile({
         "displayName": displayName
-      })
-      // this.firebaseAuth.updateCurrentUser()
+      });
     });
   }
 }

@@ -42,7 +42,9 @@
 
   <div class="heading-profile">
     <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
-      <mat-icon>account_circle</mat-icon>
+      <div mat-card-avatar>
+        <img [src]="user.photoUrl">
+      </div>
     </button>
   </div>
   <mat-menu #profileDropdown="matMenu">

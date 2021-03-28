@@ -3,9 +3,11 @@
 export class UserModel{
   email: string;
   displayName: string;
+  photoUrl: string;
 
-  constructor(email: string, displayName: string){
+  constructor(email: string, displayName: string, photoUrl: string){
     this.email = email;
     this.displayName = displayName;
+    this.photoUrl = photoUrl;
   }
 }

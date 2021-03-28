@@ -23,14 +23,10 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges {
         this.user = new UserModel(user.email, user.displayName);
       }
     });
-    console.log("FROM PROFILE CARD: "+JSON.stringify(this.user));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.isLoggedIn.currentValue){
-      console.log("Changes");
-      //wait for login load
-      console.log("changes: "+JSON.stringify(changes.isLoggedIn));
       this.user = JSON.parse(localStorage.getItem("user"));
     }
   }

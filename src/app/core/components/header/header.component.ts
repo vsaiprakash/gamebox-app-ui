@@ -97,6 +97,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.firebaseService.logout();
     this.loggedIn = false;
+    this.goToHome();
   }
 
   toggle() {

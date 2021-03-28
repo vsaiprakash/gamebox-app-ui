@@ -1,9 +1,10 @@
 .profile-card {
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .display-name{
   overflow-wrap: anywhere;
+  font-size: 1rem;
 }
 
 .email{
@@ -14,4 +15,10 @@ img{
   border-radius: 50%;
   height: 30px;
   width: 30px;
+}
+
+.profile-dropdown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

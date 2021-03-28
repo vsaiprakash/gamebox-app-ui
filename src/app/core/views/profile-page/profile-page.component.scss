@@ -1,0 +1,29 @@
+.profile-card {
+  width: 80%;
+  height: 90%
+}
+
+.display-name{
+  overflow-wrap: anywhere;
+}
+
+.email{
+  overflow-wrap: anywhere;
+}
+
+img{
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.profile-page-body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center{
+  text-align: center;
+}

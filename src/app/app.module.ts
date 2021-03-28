@@ -44,6 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
+import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzALdaNf9DVmQqEBI_wqTfFVLWfaQSuoE",
@@ -68,7 +69,8 @@ const firebaseConfig = {
     CustomCarouselComponent,
     ScoreBoardComponent,
     ProfileDropdownCardComponent,
-    CustomTableComponent
+    CustomTableComponent,
+    ProfilePageComponent
 
   ],
   imports: [

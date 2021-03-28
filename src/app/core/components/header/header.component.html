@@ -49,13 +49,13 @@
   </div>
   <mat-menu #profileDropdown="matMenu">
     <app-profile-dropdown-card class="profile-dropdown" [isLoggedIn]="loggedIn" (logoutEvent)="logout()"></app-profile-dropdown-card>
+    <button mat-menu-item (click)="goToProfilePage()">
+      <mat-icon>manage_accounts</mat-icon>
+      Profile
+    </button>
     <button mat-menu-item (click)="logout()">
       <mat-icon>logout</mat-icon>
       Logout
-    </button>
-    <button mat-menu-item>
-      <mat-icon>manage_accounts</mat-icon>
-      Profile
     </button>
   </mat-menu>
 

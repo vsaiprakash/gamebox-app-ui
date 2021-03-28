@@ -1,0 +1,36 @@
+
+<div class="custom-body">
+  <div class="row">
+    <div class="col-1">
+      <button mat-mini-fab color="primary" type="button" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-11">
+      <h2><strong>Profile Page</strong></h2>
+    </div>
+  </div>
+
+  <div class="profile-page-body" *ngIf="!user">
+    <div class="center">
+      <h3>
+        Please Login to Access Your Profile Page
+      </h3>
+      <button mat-raised-button color="primary" type="button" (click)="openLogin()">
+        <mat-icon>login</mat-icon> Go to Login Page
+      </button>
+    </div>
+  </div>
+
+  <div class="profile-page-body" *ngIf="user">
+    <mat-card class="profile-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <img class="profile-image" [src]="user.photoUrl">
+        </div>
+        <mat-card-title class="display-name">{{user.displayName}}</mat-card-title>
+        <mat-card-subtitle class="email">{{user.email}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

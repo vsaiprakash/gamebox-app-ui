@@ -9,6 +9,7 @@ import { ScoreBoardComponent } from './core/views/score-board/score-board.compon
 
 //Constants
 import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
+import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
 
 const ROOTPATH: string = GAMEBOXCONFIG.ROOTPATH + "/";
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'gameLink/:id', component: GameSelectedComponent },
   { path: 'category/:id', component: CategorySelectedComponent },
-  { path: 'scoreBoard', component: ScoreBoardComponent }
+  { path: 'scoreBoard', component: ScoreBoardComponent },
+  { path: 'profilePage', component: ProfilePageComponent }
 ];
 
 @NgModule({

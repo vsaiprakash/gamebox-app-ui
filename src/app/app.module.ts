@@ -47,6 +47,7 @@ import { FirebaseService } from './core/services/firebase.service';
 import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
 import { FavouriteGamesComponent } from './core/views/favourite-games/favourite-games.component';
 import { PageNotFoundComponent } from './core/views/page-not-found/page-not-found.component';
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzALdaNf9DVmQqEBI_wqTfFVLWfaQSuoE",
@@ -107,7 +108,7 @@ const firebaseConfig = {
     MatSortModule,
     MatTabsModule
   ],
-  providers: [NavigationService, FirebaseService],
+  providers: [NavigationService, FirebaseService, AuthGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

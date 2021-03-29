@@ -11,6 +11,8 @@ import { ScoreBoardComponent } from './core/views/score-board/score-board.compon
 import { GAMEBOXCONFIG } from 'src/assets/GAMEBOXCONFIG';
 import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
 import { PageNotFoundComponent } from './core/views/page-not-found/page-not-found.component';
+import { FavouriteGamesComponent } from './core/views/favourite-games/favourite-games.component';
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 
 const ROOTPATH: string = GAMEBOXCONFIG.ROOTPATH + "/";
 
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'category/:id', component: CategorySelectedComponent },
   { path: 'scoreBoard', component: ScoreBoardComponent },
   { path: 'profilePage', component: ProfilePageComponent },
+  { path: 'favouriteGames', component: FavouriteGamesComponent, canActivate: [AuthGuardGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 

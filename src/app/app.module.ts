@@ -45,6 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
 import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
+import { FavouriteGamesComponent } from './core/views/favourite-games/favourite-games.component';
+import { PageNotFoundComponent } from './core/views/page-not-found/page-not-found.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzALdaNf9DVmQqEBI_wqTfFVLWfaQSuoE",
@@ -70,7 +72,9 @@ const firebaseConfig = {
     ScoreBoardComponent,
     ProfileDropdownCardComponent,
     CustomTableComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    FavouriteGamesComponent,
+    PageNotFoundComponent
 
   ],
   imports: [

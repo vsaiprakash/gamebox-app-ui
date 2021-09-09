@@ -5,6 +5,11 @@ Live Demo deployed at http://vsaiprakash.github.io/gamebox-app-ui
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.2.
 
+## Internationalization
+
+Used @ngx-translate/core Library
+https://github.com/ngx-translate/core 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

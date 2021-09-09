@@ -9,3 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Used @ngx-translate/core Library
 https://github.com/ngx-translate/core 
+
+## GBA Emulator
+
+Used Online Open Source Emulator & games from https://jsemu2.github.io/gba/

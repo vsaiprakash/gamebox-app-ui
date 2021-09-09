@@ -6,6 +6,7 @@ import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
+import { LanguageService } from '../../services/language.service';
 import { StorageService } from '../../services/storage.service';
 
 @Component({
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
   user: UserModel;
 
   constructor(private router: Router,
-    private firebaseService: FirebaseService) {
+    private firebaseService: FirebaseService,
+    private languagesService: LanguageService) {
     this.appName = GAMEBOXCONFIG.APPNAME;
     this.languages = GAMEBOXCONFIG.LANGUAGES;
     this.categories = CATEGORIES_LIST;
@@ -98,6 +100,10 @@ export class HeaderComponent implements OnInit {
     this.firebaseService.logout();
     this.loggedIn = false;
     this.goToHome();
+  }
+
+  selectLang(language){
+    this.languagesService.setLang(language);
   }
 
   toggle() {

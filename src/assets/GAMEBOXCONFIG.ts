@@ -18,7 +18,7 @@ export const GAMEBOXCONFIG = {
   ROOTPATH: ROOTPATH,
   LANGUAGES:[
     { LANGUAGE_DISPLAYNAME: "English", LANGUAGE_VALUE: "en" },
-    { LANGUAGE_DISPLAYNAME: "Telugu", LANGUAGE_VALUE: "te" },
+    { LANGUAGE_DISPLAYNAME: "తెలుగు", LANGUAGE_VALUE: "te" },
   ],
   GAMES:[
     new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "pokemon", "https://jsemu2.github.io/gba/launcher.html#pokemonred", CATEGORIES_LIST[1], RATINGS[4] ),

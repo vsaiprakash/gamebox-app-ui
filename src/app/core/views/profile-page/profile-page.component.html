@@ -7,17 +7,19 @@
       </button>
     </div>
     <div class="col-11">
-      <h2><strong>Profile Page</strong></h2>
+      <h2><strong>
+        {{'APP.PROFILE.TITLE' | translate}}
+      </strong></h2>
     </div>
   </div>
 
   <div class="profile-page-body" *ngIf="!user">
     <div class="center">
       <h3>
-        Please Login to Access Your Profile Page
+        {{'APP.PROFILE.NOTLOGGEDIN' | translate}}
       </h3>
       <button mat-raised-button color="primary" type="button" (click)="openLogin()">
-        <mat-icon>login</mat-icon> Go to Login Page
+        <mat-icon>login</mat-icon> {{'APP.PROFILE.GOTOLOGIN' | translate}}
       </button>
     </div>
   </div>

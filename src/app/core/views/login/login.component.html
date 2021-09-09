@@ -2,12 +2,12 @@
   <mat-card class="mat-elevation-z4">
     <mat-card-content>
       <mat-tab-group>
-        <mat-tab label="Login">
+        <mat-tab label="{{ 'APP.LOGIN.EMAIL' | translate }}">
           <div class="login-body">
             <form [formGroup]="loginForm">
 
               <mat-form-field class="custom-mat-form">
-                <mat-label>Email</mat-label>
+                <mat-label>{{ 'APP.LOGIN.EMAIL' | translate }}</mat-label>
                 <input matInput type="text" formControlName="email">
                 <button mat-icon-button matSuffix disabled>
                   <mat-icon>account_circle</mat-icon>
@@ -15,7 +15,7 @@
               </mat-form-field>
               <br>
               <mat-form-field class="custom-mat-form">
-                <mat-label>Password</mat-label>
+                <mat-label>{{ 'APP.LOGIN.PASSWORD' | translate }}</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -24,17 +24,17 @@
             </form>
 
             <div class="form-actions">
-              <button class="login-button" mat-raised-button color="primary" (click)="loginWithFirebase()">Login</button>
-              <button class="cancel-button" mat-raised-button (click)="cancel()">Cancel</button>
+              <button class="login-button" mat-raised-button color="primary" (click)="loginWithFirebase()">{{ 'APP.LOGIN.TITLE' | translate }}</button>
+              <button class="cancel-button" mat-raised-button (click)="cancel()">{{ 'APP.LOGIN.CANCEL' | translate }}</button>
             </div>
           </div>
         </mat-tab>
-        <mat-tab label="Sign Up">
+        <mat-tab label="{{ 'APP.LOGIN.SIGNUP' | translate }}">
           <div class="signup-body">
             <form [formGroup]="signUpForm">
 
               <mat-form-field class="custom-mat-form">
-                <mat-label>Email</mat-label>
+                <mat-label>{{ 'APP.LOGIN.EMAIL' | translate }}</mat-label>
                 <input matInput type="text" formControlName="email">
                 <button mat-icon-button matSuffix disabled>
                   <mat-icon>account_circle</mat-icon>
@@ -42,7 +42,7 @@
               </mat-form-field>
               <br>
               <mat-form-field class="custom-mat-form">
-                <mat-label>Password</mat-label>
+                <mat-label>{{ 'APP.LOGIN.PASSWORD' | translate }}</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -51,8 +51,8 @@
             </form>
 
             <div class="form-actions">
-              <button class="signup-button" mat-raised-button color="primary" (click)="signUpWithFirebase()">Sign Up</button>
-              <button class="cancel-button" mat-raised-button (click)="cancel()">Cancel</button>
+              <button class="signup-button" mat-raised-button color="primary" (click)="signUpWithFirebase()">{{ 'APP.LOGIN.SIGNUP' | translate }}</button>
+              <button class="cancel-button" mat-raised-button (click)="cancel()">{{ 'APP.LOGIN.CANCEL' | translate }}</button>
             </div>
           </div>
         </mat-tab>

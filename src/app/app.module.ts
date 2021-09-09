@@ -43,7 +43,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Internationalization
-import {TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
@@ -51,6 +52,7 @@ import { ProfilePageComponent } from './core/views/profile-page/profile-page.com
 import { FavouriteGamesComponent } from './core/views/favourite-games/favourite-games.component';
 import { PageNotFoundComponent } from './core/views/page-not-found/page-not-found.component';
 import { AuthGuardGuard } from './core/guards/auth-guard.guard';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzALdaNf9DVmQqEBI_wqTfFVLWfaQSuoE",
@@ -60,6 +62,11 @@ const firebaseConfig = {
   messagingSenderId: "595345511278",
   appId: "1:595345511278:web:c235a6605b20229400a77f"
 };
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -87,12 +94,20 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule, //Important for TranslateModule
 
     //ng-bootstrap used for carousel in home page
     NgbModule,
 
     //Internationalized with multiple languages
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient],
+          // defaultLanguage: 'en' 
+      }
+    }),
 
     //Backend Service
     AngularFireModule.initializeApp(firebaseConfig),

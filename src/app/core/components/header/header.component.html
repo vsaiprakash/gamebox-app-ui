@@ -5,7 +5,7 @@
   <div class="heading">
     <mat-icon class="custom-gamepad-icon">videogame_asset</mat-icon>
     <a (click)="goToHome()">
-      {{appName}}
+      {{ 'APP.HEADER.TITLE' | translate }}
     </a>
   </div>
 
@@ -30,18 +30,18 @@
   </mat-menu>
 
   <div class="heading-language">
-    <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="Language">
+    <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="{{'APP.HEADER.LANGUAGE' | translate}}">
       <mat-icon>language</mat-icon>
     </button>
   </div>
   <mat-menu #languageMenu="matMenu">
     <div *ngFor="let language of languages">
-      <button mat-menu-item>{{language.LANGUAGE_DISPLAYNAME}}</button>
+      <button mat-menu-item (click)="selectLang(language.LANGUAGE_VALUE)">{{language.LANGUAGE_DISPLAYNAME}}</button>
     </div>
   </mat-menu>
 
   <div class="heading-profile">
-    <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="Profile">
+    <button *ngIf="loggedIn" mat-icon-button [matMenuTriggerFor]="profileDropdown" matTooltip="{{'APP.HEADER.PROFILE' | translate}}">
       <div mat-card-avatar>
         <img [src]="user.photoUrl">
       </div>
@@ -65,10 +65,10 @@
     </button>
   </div>
   <div>
-    <label class="toggle-label-offline" id="offline">Offline</label>
+    <label class="toggle-label-offline" id="offline">{{'APP.HEADER.OFFLINE' | translate}}</label>
     <mat-slide-toggle class="custom-toggle" [(ngModel)]="isOnline" (change)="toggle()">
     </mat-slide-toggle>
-    <label class="toggle-label-online" id="online">Online</label>
+    <label class="toggle-label-online" id="online">{{'APP.HEADER.ONLINE' | translate}}</label>
   </div>
 </mat-toolbar>
 </p>

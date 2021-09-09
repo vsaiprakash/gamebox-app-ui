@@ -15,6 +15,9 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    // Importing the .json file directly with option "resolveJsonModule" : true
+    // example:- import * as colorsJson from '../colors.json'
+    "resolveJsonModule": true
   }
 }

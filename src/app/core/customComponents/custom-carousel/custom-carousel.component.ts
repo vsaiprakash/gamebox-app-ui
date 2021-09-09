@@ -11,10 +11,8 @@ import { CarouselModel } from 'src/app/core/models/carousel-model'
 export class CustomCarouselComponent implements OnInit {
 
   @Input() carouselslides: CarouselModel[];
-  router: Router;
 
-  constructor(router: Router) {
-    this.router = router;
+  constructor(public router: Router) {
   }
 
   ngOnInit(): void {

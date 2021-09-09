@@ -12,7 +12,6 @@ import { UserModel } from '../models/user-model';
 export class FirebaseService {
 
   isLoggedIn: boolean = false;
-  // loggedInUser: UserModel;
   loggedInUser: BehaviorSubject<UserModel> = new BehaviorSubject<UserModel>(null);
 
   constructor(private firebaseAuth: AngularFireAuth) { }
@@ -55,27 +54,13 @@ export class FirebaseService {
   }
 
   getCurrentUserDetails(): Observable<UserModel>{
-    // let userModel = null;
-
-    // await this.firebaseAuth.currentUser.then((user)=>{
-    //   userModel = new UserModel(user.email,
-    //                             user.displayName??user.email,
-    //                             // user.displayName?user.displayName: user.email,
-    //                             LOCALUSERS.photoUrl);
-    //   console.log("CURRENT USER: "+JSON.stringify(userModel));
-    //   return userModel;
-    // })
-    // .catch((reason)=>{
-    //   console.log("No one logged In");
-    //   return null;
-    // });
-    // return await userModel;
-
     return this.loggedInUser.asObservable().pipe(
       map((user)=>{
+        //default photo incase not available
         if(user.photoUrl==null){
           user.photoUrl = LOCALUSERS.photoUrl;
         }
+        //use email incase display name is not available
         if(user.displayName==null){
           user.displayName = user.email;
         }

@@ -18,6 +18,12 @@ export class GameCardComponent implements OnInit {
   @ViewChild('.custom-game-card')
   customGameCard: any;
 
+  //when parameter is used without public or private specifier, the injected service's
+  //scope is limited the constructor only so we need to keep copy that instance outside 
+  //the constructor. This might cause problems like duplicate instance of injected service
+  //private - makes the service accessible only in this .ts file
+  //public - makes the service accessible to template view also
+  //below type of injection is done just of learning purpose !!!
   constructor(router: Router) {
     this.router = router;
   }

@@ -29,14 +29,34 @@
       <mat-card-header>
         <div mat-card-avatar>
           <img class="profile-image" [src]="user.photoUrl">
+          <button mat-icon-button (click)="uploadImg()">
+            <mat-icon>cloud_upload</mat-icon>
+          </button>
         </div>
+        <!-- -->
         <mat-card-title class="display-name">
-          {{user.displayName}}
-          <mat-icon>edit</mat-icon>
+          <div *ngIf="!editDisplayNameFlag">
+            {{user.displayName}}
+            <!-- -->
+            <button mat-icon-button (click)="editDisplayName()">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <!-- -->
+          <div *ngIf="editDisplayNameFlag">
+            <mat-form-field appearance="fill">
+              <input matInput type="text" [(ngModel)]="user.displayName">
+            </mat-form-field>
+            <!--  -->
+            <button mat-icon-button (click)="saveDisplayName()">
+              <mat-icon>save</mat-icon>
+            </button>
+          </div>
         </mat-card-title>
+
         <mat-card-subtitle class="email">
-          {{user.email}}
-          <mat-icon>edit</mat-icon>
+          <!-- Email is not updatable -->
+            {{user.email}}
         </mat-card-subtitle>
       </mat-card-header>
     </mat-card>

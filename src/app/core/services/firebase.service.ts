@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
@@ -18,6 +18,8 @@ export class FirebaseService {
 
   async signIn(email: string, password: string){
     console.log("Signing In ... ");
+    // For Testing without Login
+    // this.loggedInUser.next(LOCALUSERS);
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
@@ -54,6 +56,10 @@ export class FirebaseService {
   }
 
   getCurrentUserDetails(): Observable<UserModel>{
+
+    // For Testing without Login
+    // return of(LOCALUSERS);
+
     return this.loggedInUser.asObservable().pipe(
       map((user)=>{
         //default photo incase not available
@@ -73,6 +79,14 @@ export class FirebaseService {
     this.firebaseAuth.currentUser.then((user)=>{
       user.updateProfile({
         "displayName": displayName
+      });
+    });
+  }
+
+  updateCurrentUserPhotoURL(photoURL: string){
+    this.firebaseAuth.currentUser.then((user)=>{
+      user.updateProfile({
+        "photoURL": photoURL
       });
     });
   }

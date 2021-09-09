@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LOCALUSERS } from 'dist/gamebox-app-ui/assets/LOCALUSERS';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
 import { NavigationService } from '../../services/navigation.service';
@@ -12,6 +13,8 @@ import { NavigationService } from '../../services/navigation.service';
 export class ProfilePageComponent implements OnInit {
 
   user: UserModel;
+  editDisplayNameFlag: boolean;
+  editEmailFlag: boolean;
 
   constructor(private firebaseService: FirebaseService,
               private navigation: NavigationService,
@@ -19,10 +22,11 @@ export class ProfilePageComponent implements OnInit {
     this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
       this.user = user;
     });
-    
   }
 
   ngOnInit(): void {
+    this.editDisplayNameFlag = false;
+    this.editEmailFlag = false;
   }
 
   openLogin() {
@@ -31,5 +35,22 @@ export class ProfilePageComponent implements OnInit {
 
   back(){
     this.navigation.back();
+  }
+
+  editDisplayName(){
+    this.editDisplayNameFlag = true;
+  }
+
+  saveDisplayName(){
+    this.editDisplayNameFlag = false;
+    this.firebaseService.updateCurrentUserDisplayName(this.user.displayName);
+  }
+
+  uploadImg(){
+    //upload the image to firebase cloud
+    //get image's url
+    this.user.photoUrl = LOCALUSERS.photoUrl;
+    //update the image url to user profile
+    this.firebaseService.updateCurrentUserPhotoURL(this.user.photoUrl);
   }
 }

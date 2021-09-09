@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LOCALUSERS } from 'dist/gamebox-app-ui/assets/LOCALUSERS';
+import { LOCALUSERS } from './../../../../assets/LOCALUSERS';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
 import { NavigationService } from '../../services/navigation.service';

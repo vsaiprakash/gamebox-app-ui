@@ -18,7 +18,7 @@ export class FirebaseService {
               .then((res)=>{
                 this.isLoggedIn = true;
                 let userModel = new UserModel(res.user.email, res.user.displayName, res.user.photoURL)
-                localStorage.setItem("user", JSON.stringify(userModel));
+                sessionStorage.setItem("user", JSON.stringify(userModel));
                 console.log("Signed In Successfully");
               })
               .catch((reason)=>{
@@ -44,7 +44,7 @@ export class FirebaseService {
 
   logout(){
     console.log("Logging Out ... ");
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     this.firebaseAuth.signOut();
     console.log("Logged Out Successfully");
   }
@@ -54,7 +54,8 @@ export class FirebaseService {
 
     await this.firebaseAuth.currentUser.then((user)=>{
       userModel = new UserModel(user.email,
-                                user.displayName?user.displayName: user.email,
+                                user.displayName??user.email,
+                                // user.displayName?user.displayName: user.email,
                                 LOCALUSERS.photoUrl);
       console.log("CURRENT USER: "+JSON.stringify(userModel));
       return userModel;

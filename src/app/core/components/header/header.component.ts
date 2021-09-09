@@ -6,6 +6,7 @@ import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
+import { GamesDataService } from '../../services/games-data.service';
 import { LanguageService } from '../../services/language.service';
 import { StorageService } from '../../services/storage.service';
 
@@ -26,7 +27,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router,
     private firebaseService: FirebaseService,
-    private languagesService: LanguageService) {
+    private languagesService: LanguageService,
+    private gamesDataService: GamesDataService) {
     this.appName = GAMEBOXCONFIG.APPNAME;
     this.languages = GAMEBOXCONFIG.LANGUAGES;
     this.categories = CATEGORIES_LIST;
@@ -49,7 +51,9 @@ export class HeaderComponent implements OnInit {
     this.startIsLoggedInTimer();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.gamesDataService.getGames();
+  }
 
   startIsLoggedInTimer(){
     let timer = setInterval(()=>{

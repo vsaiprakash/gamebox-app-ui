@@ -16,12 +16,16 @@ export class ProfilePageComponent implements OnInit {
   constructor(private firebaseService: FirebaseService,
               private navigation: NavigationService,
               private router: Router) {
-    this.firebaseService.getCurrentUserDetails().then((user)=>{
-      if(user){
-        console.log(" "+JSON.stringify(user));
-        this.user = new UserModel(user.email, user.displayName, user.photoUrl);
-      }
+    // this.firebaseService.getCurrentUserDetails().then((user)=>{
+    //   if(user){
+    //     console.log(" "+JSON.stringify(user));
+    //     this.user = new UserModel(user.email, user.displayName, user.photoUrl);
+    //   }
+    // });
+    this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+      this.user = user;
     });
+    
   }
 
   ngOnInit(): void {

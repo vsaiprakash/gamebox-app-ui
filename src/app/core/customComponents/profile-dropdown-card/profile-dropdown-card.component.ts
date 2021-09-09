@@ -18,16 +18,18 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges {
   @Output() logoutEvent = new EventEmitter<string>();
 
   constructor(private firebaseService: FirebaseService) {
-    this.firebaseService.getCurrentUserDetails().then((user)=>{
-      if(user){
-        this.user = new UserModel(user.email, user.displayName, user.photoUrl);
-      }
-    });
+    // this.firebaseService.getCurrentUserDetails().then((user)=>{
+    //   if(user){
+    //     this.user = new UserModel(user.email, user.displayName, user.photoUrl);
+    //   }
+    // });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.isLoggedIn.currentValue){
-      this.user = JSON.parse(localStorage.getItem("user"));
+      this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+        this.user = user;
+      });
     }
   }
 

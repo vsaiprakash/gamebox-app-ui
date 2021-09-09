@@ -30,8 +30,14 @@
         <div mat-card-avatar>
           <img class="profile-image" [src]="user.photoUrl">
         </div>
-        <mat-card-title class="display-name">{{user.displayName}}</mat-card-title>
-        <mat-card-subtitle class="email">{{user.email}}</mat-card-subtitle>
+        <mat-card-title class="display-name">
+          {{user.displayName}}
+          <mat-icon>edit</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle class="email">
+          {{user.email}}
+          <mat-icon>edit</mat-icon>
+        </mat-card-subtitle>
       </mat-card-header>
     </mat-card>
   </div>

@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@ang
 import { Router } from '@angular/router';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
+import { LOCALUSERS } from 'src/assets/LOCALUSERS';
 import { CategoryModel } from '../../models/category-model';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
@@ -36,10 +37,10 @@ export class HeaderComponent implements OnInit {
     this.isOnline = false;
     this.loggedIn = false;
 
-    if (localStorage.getItem("user")) {
-      //on reload of page, loggedin user is logged out
-      localStorage.removeItem("user");
-    }
+    // if (sessionStorage.getItem("user")) {
+    //   //on reload of page, loggedin user is logged out
+    //   sessionStorage.removeItem("user");
+    // }
 
     // let timer = setInterval(() => {
     //   if(localStorage.getItem("user")){
@@ -48,34 +49,41 @@ export class HeaderComponent implements OnInit {
     //     clearInterval(timer);
     //   }
     // }, 500);
-    this.startIsLoggedInTimer();
+    // this.startIsLoggedInTimer();
+
   }
 
   ngOnInit(): void {
     this.gamesDataService.getGames();
-  }
-
-  startIsLoggedInTimer(){
-    let timer = setInterval(()=>{
-      if(localStorage.getItem("user")){
+    this.firebaseService.loggedInUser.subscribe((user)=>{
+      if(user){
+        this.user = user;
         this.loggedIn = true;
-        this.user = JSON.parse(localStorage.getItem("user"));
-        this.startIsLoggedOutTimer();
-        clearInterval(timer);
       }
-    }, 500)
+    });
   }
 
-  startIsLoggedOutTimer(){
-    let timer = setInterval(()=>{
-      if(localStorage.getItem("user")==null){
-        this.loggedIn = false;
-        this.user = JSON.parse(localStorage.getItem("user"));
-        this.startIsLoggedInTimer();
-        clearInterval(timer);
-      }
-    }, 500)
-  }
+  // startIsLoggedInTimer(){
+  //   let timer = setInterval(()=>{
+  //     if(localStorage.getItem("user")){
+  //       this.loggedIn = true;
+  //       this.user = JSON.parse(localStorage.getItem("user"));
+  //       this.startIsLoggedOutTimer();
+  //       clearInterval(timer);
+  //     }
+  //   }, 500)
+  // }
+
+  // startIsLoggedOutTimer(){
+  //   let timer = setInterval(()=>{
+  //     if(localStorage.getItem("user")==null){
+  //       this.loggedIn = false;
+  //       this.user = JSON.parse(localStorage.getItem("user"));
+  //       this.startIsLoggedInTimer();
+  //       clearInterval(timer);
+  //     }
+  //   }, 500)
+  // }
 
   openCategory(category_value: string): void {
     // below is required so incase the route navigates

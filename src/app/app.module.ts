@@ -42,6 +42,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+//Internationalization
+import {TranslateModule} from '@ngx-translate/core';
+
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './core/services/firebase.service';
 import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
@@ -87,6 +90,9 @@ const firebaseConfig = {
 
     //ng-bootstrap used for carousel in home page
     NgbModule,
+
+    //Internationalized with multiple languages
+    TranslateModule.forRoot(),
 
     //Backend Service
     AngularFireModule.initializeApp(firebaseConfig),

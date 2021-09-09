@@ -1,0 +1,39 @@
+{
+    "APP": {
+        "HEADER":{
+            "TITLE": "Game Box",
+            "LANGUAGE": "Language",
+            "PROFILE": "Profile",
+            "LOGIN": "Login",
+            "OFFLINE": "Offline",
+            "ONLINE": "Online"
+        },
+        "FOOTER":{
+            "TITLE": "Game Box"
+        },
+        "PROFILE":{
+            "TITLE": "Profile Page",
+            "NOTLOGGEDIN": "Please Login to Access Your Profile Page",
+            "GOTOLOGIN": "Go to Login Page"
+        },
+        "LOGIN":{
+            "TITLE": "Login",
+            "SIGNUP": "Sign Up",
+            "CANCEL": "Cancel",
+            "EMAIL": "Email",
+            "PASSWORD":"Password"
+        },
+        "SCOREBOARD":{
+            "TITLE": "Score Board"
+        },
+        "FAVOURITEGAMES":{
+            "TITLE": "Your Favourite Games"
+        },
+        "SELECTEDGAME":{
+            "TITLE": "Title",
+            "SOURCECREDITSTO":"Credits to ",
+            "RESRCUSED": "Resource used: "
+        },
+        "404NOTFOUND": "404 Page Not Found"
+    }
+}

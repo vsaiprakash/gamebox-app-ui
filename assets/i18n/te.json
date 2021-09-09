@@ -1,0 +1,39 @@
+{
+    "APP": {
+        "HEADER":{
+            "TITLE": "గేమ్ బాక్స్",
+            "LANGUAGE": "భాష",
+            "PROFILE": "ప్రొఫైల్",
+            "LOGIN": "సైన్ ఇన్",
+            "OFFLINE": "ఆఫ్‌లైన్",
+            "ONLINE": "ఆన్లైన్"
+        },
+        "FOOTER":{
+            "TITLE": "గేమ్ బాక్స్"
+        },
+        "PROFILE":{
+            "TITLE": "ప్రొఫైల్ పేజీ",
+            "NOTLOGGEDIN": "దయచేసి మీ ప్రొఫైల్ పేజీని యాక్సెస్ చేయడానికి లాగిన్ అవ్వండి",
+            "GOTOLOGIN": "లాగిన్ పేజీకి వెళ్లండి"
+        },
+        "LOGIN":{
+            "TITLE": "సైన్ ఇన్",
+            "SIGNUP": "చేరడం",
+            "CANCEL": "రద్దు చేయండి",
+            "EMAIL": "ఈ-మెయిల్",
+            "PASSWORD":"పాస్వర్డ్"
+        },
+        "SCOREBOARD":{
+            "TITLE": "స్కోరు బోర్డు"
+        },
+        "FAVOURITEGAMES":{
+            "TITLE": "మీకు ఇష్టమైన గేమ్స్"
+        },
+        "SELECTEDGAME":{
+            "TITLE": "పేరు",
+            "SOURCECREDITSTO":"క్రెడిట్స్ to ",
+            "RESRCUSED": "ఉపయోగించిన వనరు: "
+        },
+        "404NOTFOUND": "404 పేజి దొరకలేదు"
+    }
+}

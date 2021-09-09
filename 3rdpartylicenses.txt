@@ -315,6 +315,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@ngx-translate/core
+MIT
+
+@ngx-translate/http-loader
+MIT
+
 css-loader
 MIT
 Copyright JS Foundation and other contributors

@@ -1,5 +1,6 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
@@ -13,7 +14,7 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   appName: string;
   languages: any[];
@@ -22,6 +23,8 @@ export class HeaderComponent implements OnInit {
   isOnline: boolean;
   loggedIn: boolean;
   user: UserModel;
+
+  userSubscription: Subscription;
 
   constructor(private router: Router,
     private firebaseService: FirebaseService,
@@ -34,10 +37,13 @@ export class HeaderComponent implements OnInit {
     this.isOnline = false;
     this.loggedIn = false;
   }
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
+  }
 
   ngOnInit(): void {
     this.gamesDataService.getGames();
-    this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+    this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
       if(user){
         this.user = user;
         this.loggedIn = true;

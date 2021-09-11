@@ -1,32 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LOCALUSERS } from './../../../../assets/LOCALUSERS';
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
 import { NavigationService } from '../../services/navigation.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.scss']
 })
-export class ProfilePageComponent implements OnInit {
+export class ProfilePageComponent implements OnInit, OnDestroy {
 
   user: UserModel;
   editDisplayNameFlag: boolean;
   editEmailFlag: boolean;
 
+  userSubscription: Subscription;
+
   constructor(private firebaseService: FirebaseService,
               private navigation: NavigationService,
               private router: Router) {
-    this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
-      this.user = user;
-    });
   }
 
   ngOnInit(): void {
+    this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+      this.user = user;
+    });
     this.editDisplayNameFlag = false;
     this.editEmailFlag = false;
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 
   openLogin() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { UserModel } from '../../models/user-model';
@@ -25,20 +25,23 @@ export class LoginComponent implements OnInit {
   failureSignUpMessage: string;
   failureLoginMessage: string;
 
+  //method #1 reactive form
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
-  signUpForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
+  //method #2 reactive form
+  signUpForm = this.formBuilder.group({
+    email: [{value: '', disabled:true}],
+    password: [{value: '', disabled:true}],
+  })
 
   constructor(private _snackBar: MatSnackBar,
               private navigation: NavigationService,
               private router: Router,
-              private firebaseService: FirebaseService) {
+              private firebaseService: FirebaseService,
+              private formBuilder: FormBuilder) {
     this.successfulLoginMessage = "Login Success";
     this.failureLoginMessage = "Login Failed";
 
@@ -56,6 +59,10 @@ export class LoginComponent implements OnInit {
                 .then(()=>{
                   this.onSuccessful(this.successfulLoginMessage);
                   this.router.navigateByUrl("home");
+                },
+                error => {
+                  this.onFailure(this.failureLoginMessage);
+                  console.log(error);
                 })
                 .catch((reason)=>{
                   this.onFailure(this.failureLoginMessage);

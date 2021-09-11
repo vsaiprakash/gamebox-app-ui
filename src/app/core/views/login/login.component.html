@@ -51,8 +51,12 @@
             </form>
 
             <div class="form-actions">
-              <button class="signup-button" mat-raised-button color="primary" (click)="signUpWithFirebase()">{{ 'APP.LOGIN.SIGNUP' | translate }}</button>
-              <button class="cancel-button" mat-raised-button (click)="cancel()">{{ 'APP.LOGIN.CANCEL' | translate }}</button>
+              <button class="signup-button" mat-raised-button color="primary" (click)="signUpWithFirebase()" disabled>
+                {{ 'APP.LOGIN.SIGNUP' | translate }}
+              </button>
+              <button class="cancel-button" mat-raised-button (click)="cancel()" disabled>
+                {{ 'APP.LOGIN.CANCEL' | translate }}
+              </button>
             </div>
           </div>
         </mat-tab>

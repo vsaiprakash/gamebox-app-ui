@@ -49,8 +49,8 @@ export class ProfilePageComponent implements OnInit {
   uploadImg(){
     //upload the image to firebase cloud
     //get image's url
-    this.user.photoUrl = LOCALUSERS.photoUrl;
+    this.user.photoURL = LOCALUSERS.photoURL;
     //update the image url to user profile
-    this.firebaseService.updateCurrentUserPhotoURL(this.user.photoUrl);
+    this.firebaseService.updateCurrentUserPhotoURL(this.user.photoURL);
   }
 }

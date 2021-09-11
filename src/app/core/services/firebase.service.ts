@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, from, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
@@ -24,7 +24,7 @@ export class FirebaseService {
               .then((res)=>{
                 this.isLoggedIn = true;
                 let user = new UserModel(res.user.email, res.user.displayName, res.user.photoURL);
-                this.loggedInUser.next(user);
+                this.loggedInUser.next(this.useDefaultUserDetails(user));
                 // this.loggedInUser = 
                 console.log("Signed In Successfully");
               })
@@ -38,10 +38,10 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
               .then((res)=>{
                 this.isLoggedIn = true;
-                let userModel = new UserModel(res.user.email, res.user.email, LOCALUSERS.photoUrl)
+                let userModel = new UserModel(res.user.email, res.user.email, LOCALUSERS.photoURL)
                 res.user.updateProfile({
                   displayName: res.user.email,
-                  photoURL: LOCALUSERS.photoUrl
+                  photoURL: LOCALUSERS.photoURL
                 }).then(()=>{
                   console.log("SignUp Successful");
                 });
@@ -60,22 +60,53 @@ export class FirebaseService {
     // For Testing without Login
     // return of(LOCALUSERS);
 
+    // revert to this version incase any issues in above method
     return this.loggedInUser.asObservable().pipe(
       map((user)=>{
-        //default photo incase not available
-        if(user.photoUrl==null){
-          user.photoUrl = LOCALUSERS.photoUrl;
-        }
-        //use email incase display name is not available
-        if(user.displayName==null){
-          user.displayName = user.email;
+        if(user){
+          //default photo incase not available
+          if (user.photoURL == null) {
+            user.photoURL = LOCALUSERS.photoURL;
+          }
+          //use email incase display name is not available
+          if (user.displayName == null) {
+            user.displayName = user.email;
+          }
         }
         return user;
       })
     );
   }
 
+  // getCurrentUserPromise(){
+  //   return this.firebaseAuth.currentUser.then((user)=>{
+  //     this.loggedInUser.next(user);
+  //   });
+  // }
+
+  useDefaultUserDetails(user: any) :UserModel{
+    //default photo incase not available
+    if (user.photoURL == null) {
+      user.photoURL = LOCALUSERS.photoURL;
+    }
+    //use email incase display name is not available
+    if (user.displayName == null) {
+      user.displayName = user.email;
+    }
+    return user;
+  }
+
   updateCurrentUserDisplayName(displayName: string){
+    // this.firebaseAuth.user.subscribe((user)=>{
+    //   user.updateProfile({
+    //     "displayName": displayName
+    //   }).then(success => {
+    //     console.log("Updated user: "+JSON.stringify(success));
+    //   },
+    //   failure => {
+    //     console.log("Failure: "+JSON.stringify(failure));
+    //   });
+    // })
     this.firebaseAuth.currentUser.then((user)=>{
       user.updateProfile({
         "displayName": displayName

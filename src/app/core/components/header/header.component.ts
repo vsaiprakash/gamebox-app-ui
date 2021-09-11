@@ -1,6 +1,7 @@
 import { stringify } from '@angular/compiler/src/util';
 import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
@@ -55,7 +56,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.gamesDataService.getGames();
-    this.firebaseService.loggedInUser.subscribe((user)=>{
+    // this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+    //   if(user){
+    //     this.user = user;
+    //     this.loggedIn = true;
+    //   }
+    // });
+    this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
       if(user){
         this.user = user;
         this.loggedIn = true;
@@ -119,6 +126,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggle() {
+    //need to improve this later avoiding the direct DOM manipulation
     if (this.isOnline) {
       document.getElementById("online").style.color = "yellow";
       document.getElementById("offline").style.color = "white";

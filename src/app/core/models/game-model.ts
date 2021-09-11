@@ -1,3 +1,4 @@
+import { CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from './category-model';
 
 export class GameModel{
@@ -77,6 +78,9 @@ export class GameModel{
 	}
 
 	public set game_category(value: CategoryModel) {
+		if(value==null){
+			this._game_category = CATEGORIES_LIST[0]
+		}
 		this._game_category = value;
 	}
 

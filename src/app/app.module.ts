@@ -47,6 +47,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FirebaseService } from './core/services/firebase.service';
 import { ProfilePageComponent } from './core/views/profile-page/profile-page.component';
 import { FavouriteGamesComponent } from './core/views/favourite-games/favourite-games.component';
@@ -112,6 +113,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     //Backend Service
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
 
     // Angular Material Modules
     MatIconModule,

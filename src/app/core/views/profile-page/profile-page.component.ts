@@ -5,6 +5,7 @@ import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Observable, Subscription } from 'rxjs';
+import { UserDBService } from '../../services/userdb.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -18,15 +19,22 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   editEmailFlag: boolean;
 
   userSubscription: Subscription;
+  userDBSubscription: Subscription;
 
   constructor(private firebaseService: FirebaseService,
               private navigation: NavigationService,
-              private router: Router) {
+              private router: Router,
+              private userdb: UserDBService) {
   }
 
   ngOnInit(): void {
     this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
       this.user = user;
+      console.log("User: "+JSON.stringify(user));
+      // this.userdb.getUsers().subscribe(usersData => {
+      //   console.log("Users from DB "+JSON.stringify(usersData));
+      // });
+      this.userDBSubscription = this.userdb.getUser(user.email);
     });
     this.editDisplayNameFlag = false;
     this.editEmailFlag = false;
@@ -34,6 +42,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe();
+    this.userDBSubscription.unsubscribe();
   }
 
   openLogin() {

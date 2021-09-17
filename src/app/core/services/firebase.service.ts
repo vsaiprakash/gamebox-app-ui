@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { BehaviorSubject, from, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { exhaustMap, map } from 'rxjs/operators';
 
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
 import { UserModel } from '../models/user-model';
+import { UserDBService } from './userdb.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,12 +26,57 @@ export class FirebaseService {
                 this.isLoggedIn = true;
                 let user = new UserModel(res.user.email, res.user.displayName, res.user.photoURL);
                 this.loggedInUser.next(this.useDefaultUserDetails(user));
-                // this.loggedInUser = 
                 console.log("Signed In Successfully");
               })
               .catch((reason)=>{
                 console.log("ERROR REASON: "+JSON.stringify(reason));
               });
+
+  }
+
+  async signInV2(email: string, password: string){
+    console.log("Signing In ... ");
+    // For Testing without Login
+    // this.loggedInUser.next(LOCALUSERS);
+    // let prom = (from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
+    //   exhaustMap(value => {
+    //     // console.log("exhausting value: "+JSON.stringify(value));
+    //     return this.userdb.getUser(value.user.email);
+    //   })
+    // )).toPromise();
+    // console.log("Generated promise: "+JSON.stringify(prom));
+    // console.log("Before promise");
+    // await prom.then((res)=>{
+    //             console.log("UserModel "+JSON.stringify(res));
+    //             this.isLoggedIn = true;
+    //             this.loggedInUser.next(this.useDefaultUserDetails(res));
+    //             // this.loggedInUser = 
+    //             console.log("Signed In Successfully");
+    //           },
+    //           (err)=>{
+    //             console.log("ERROR IN PROMISE: "+JSON.stringify(err));
+    //           })
+    //           .catch((reason)=>{
+    //             console.log("ERROR REASON: "+JSON.stringify(reason));
+    //           });
+
+    // this.loggedInUser.next(from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
+    //             exhaustMap(value => {
+    //               // console.log("exhausting value: "+JSON.stringify(value));
+    //               return this.userdb.getUser(value.user.email);
+    //             })
+    //           ) as any);
+    
+    // return from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
+    //             exhaustMap(value => {
+    //               // console.log("exhausting value: "+JSON.stringify(value));
+    //               return this.userdb.getUser(value.user.email);
+    //             })
+    //           )
+    //           .subscribe(res =>{
+    //             console.log("Res: "+JSON.stringify(res));
+    //             this.loggedInUser.next(res as any);
+    //           })
   }
 
   async signUp(email: string, password: string){

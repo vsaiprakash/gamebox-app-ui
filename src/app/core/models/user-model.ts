@@ -5,7 +5,8 @@ export class UserModel{
   displayName: string;
   photoURL: string;
   masterRank: number;
-  userId: string;
+  username: string;
+  role: string;
 
   constructor(email: string, displayName: string, photoURL: string){
     this.email = email;

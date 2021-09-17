@@ -12,7 +12,8 @@ export class UserDBService {
     constructor(private firestore: AngularFirestore) {}
 
     getUsers() {
-        return this.firestore.collection('users').snapshotChanges().pipe(
+        return this.firestore.collection('users').snapshotChanges()
+        .pipe(
             map(res => {
                 let dataList = [];
                 res.forEach(user => {
@@ -23,29 +24,17 @@ export class UserDBService {
         );
     }
 
-    //need to be used along with login
-    getUser(username: string) {
-        return this.getUsers().subscribe(res => {
-            let userLoggedIn;
-            res.forEach(user => {
-                if(user.email==username){
-                    userLoggedIn = user;
-                }
-            })
-            console.log(userLoggedIn);
-        })
-    }
-
     //signup requires a user entry in db as well
     createUser(user: UserModel){
         return this.firestore.collection('users').add(user);
     }
 
     updateUser(user: UserModel){
-        this.firestore.doc('users/' + user.userId).update(user);
+        //id will be the email
+        this.firestore.doc('users/' + user.email).update(user);
     }
 
-    deleteUser(userId: string){
-        this.firestore.doc('users/' + userId).delete();
+    deleteUser(email: string){
+        this.firestore.doc('users/' + email).delete();
     }
 }

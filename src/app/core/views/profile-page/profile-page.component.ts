@@ -30,11 +30,17 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
       this.user = user;
-      console.log("User: "+JSON.stringify(user));
-      // this.userdb.getUsers().subscribe(usersData => {
-      //   console.log("Users from DB "+JSON.stringify(usersData));
-      // });
-      this.userDBSubscription = this.userdb.getUser(user.email);
+      // console.log("User: "+JSON.stringify(user));
+      this.userDBSubscription = this.userdb.getUsers().subscribe(usersData => {
+        usersData.every(userData => {
+          if(userData.email==user.email){
+            this.user = userData;
+            console.log("User from DB "+JSON.stringify(userData));
+            return false
+          }
+          return true;
+        });
+      });
     });
     this.editDisplayNameFlag = false;
     this.editEmailFlag = false;
@@ -60,6 +66,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   saveDisplayName(){
     this.editDisplayNameFlag = false;
     this.firebaseService.updateCurrentUserDisplayName(this.user.displayName);
+    this.userdb.updateUser(this.user);
   }
 
   uploadImg(){
@@ -68,5 +75,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     this.user.photoURL = LOCALUSERS.photoURL;
     //update the image url to user profile
     this.firebaseService.updateCurrentUserPhotoURL(this.user.photoURL);
+    this.userdb.updateUser(this.user);
   }
 }

@@ -1,12 +1,11 @@
 # Gamebox App UI
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.2.
 
 ## Live Demo Available at:
 Live Demo deployed at http://vsaiprakash.github.io/gamebox-app-ui
 
 ## Deployment Tool
 NPM Library used for deployment: [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.2.
 
 ## Internationalization
 

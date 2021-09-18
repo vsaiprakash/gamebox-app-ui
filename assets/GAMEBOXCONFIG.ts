@@ -22,7 +22,9 @@ export const GAMEBOXCONFIG = {
   ],
   GAMES:[
     new GameModel( "assets/images/pokemon.jpeg", "Pokemon", "An RPG Pokemon Game", "pokemon", "https://jsemu2.github.io/gba/launcher.html#pokemonred", CATEGORIES_LIST[1], RATINGS[4] ),
-    new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", "https://jsemu2.github.io/gba/launcher.html#mortal_kombat", CATEGORIES_LIST[2], RATINGS[3] ),
+    // new GameModel( "assets/images/mortalkombat.jpg", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", "https://jsemu2.github.io/gba/launcher.html#mortal_kombat", CATEGORIES_LIST[2], RATINGS[3] ),
+    new GameModel( "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2Fgames%2FMortal_Kombat_Advance_Coverart.png?alt=media&token=988fa604-b1b9-475d-a8b1-680d513c37db", "Mortal Kombat", "Fighting & Action Game", "mortalkombat", "https://jsemu2.github.io/gba/launcher.html#mortal_kombat", CATEGORIES_LIST[2], RATINGS[3] ),
+    // https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2Fgames%2FMortal_Kombat_Advance_Coverart.png?alt=media&token=988fa604-b1b9-475d-a8b1-680d513c37db
   ],
   // GAMES: data,
   CAROUSEL_LIST:[

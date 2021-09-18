@@ -10,6 +10,17 @@ import { MatCardModule } from '@angular/material/card';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminGamesComponent } from './admin-games/admin-games.component';
 import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatButtonModule } from '@angular/material/button';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './../assets/i18n/', '.json'); //during deployment in github pages this is important
+  // return new TranslateHttpLoader(http); // will only work when running in local 'ng serve'
+}
 
 @NgModule({
   declarations: [AdminRootComponent, AdminUsersComponent, AdminGamesComponent, AdminCategoriesComponent],
@@ -17,7 +28,18 @@ import { AdminCategoriesComponent } from './admin-categories/admin-categories.co
     CommonModule,
     AdminRoutingModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    //Internationalized with multiple languages forChild module
+    TranslateModule.forChild({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient],
+          // defaultLanguage: 'en' 
+      }
+    }),
   ]
 })
 export class AdminModule { }

@@ -67,7 +67,7 @@ const firebaseConfig = {
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json'); //during deployment in github pages this is important
-  // return new TranslateHttpLoader(http); // will only when running in local 'ng serve'
+  // return new TranslateHttpLoader(http); // will only work when running in local 'ng serve'
 }
 
 @NgModule({

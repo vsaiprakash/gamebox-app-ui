@@ -12,4 +12,8 @@ export class AdminRootComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  back(){
+    
+  }
+
 }

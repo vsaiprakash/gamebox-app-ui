@@ -1,5 +1,4 @@
 
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable, OnDestroy } from '@angular/core';
 import { UserModel } from '../models/user-model';
 import { concatMap, exhaustMap, map, mergeMap, switchMap } from 'rxjs/operators';

@@ -6,7 +6,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAdvance_Wars_Coverart.jpg?alt=media&token=9301b59f-2c75-4a71-a364-8028f1d9a7ab"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#advancewars2",
@@ -15,7 +15,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAdvance_Wars_2_Coverart.jpg?alt=media&token=8f0ef1e3-9061-4594-a153-19f6013ee947"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#aladdin",
@@ -24,7 +24,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAladdin_Coverart.jpg?alt=media&token=f86e3b81-1564-4dfa-b6e0-fd97598f0813"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#alienhominid",
@@ -33,7 +33,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAlien_Hominid_Coverart.jfif?alt=media&token=4285250c-8fea-4cd6-a6ce-b03e5b00d5b1"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bomberman_max2blue",
@@ -42,7 +42,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FBomberman_Max_2_Blue_Advance_Coverart.jpg?alt=media&token=7c0e7dbd-ba3f-4221-887e-e398ad555d0c"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bomberman_tournament",
@@ -51,7 +51,7 @@
         "game_link": "",
         "game_rating": 3,
         "game_category": null,
-        "game_logo_link": null
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FBomberman_Tournament_Coverart.jpg?alt=media&token=e88d720c-c537-4a18-bbd4-813eb8f48d02"
     },
     {
         "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bubblebobble",

@@ -74,6 +74,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('login');
   }
 
+  goToAdmin() {
+    this.router.navigateByUrl('admin');
+  }
+
   logout() {
     this.firebaseService.logout();
     this.loggedIn = false;

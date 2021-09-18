@@ -10,6 +10,12 @@
   </div>
 
   <span class="example-spacer"></span>
+  <div class="heading-admin">
+    <button *ngIf="loggedIn" mat-icon-button (click)="goToAdmin()" matTooltip="Admin">
+      <mat-icon>admin_panel_settings</mat-icon>
+    </button>
+  </div>
+
   <div class="heading-score">
     <button mat-icon-button (click)="goToScoreBoard()" matTooltip="Score Board">
       <mat-icon>sports_score</mat-icon>

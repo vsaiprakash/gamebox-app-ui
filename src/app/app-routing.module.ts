@@ -25,6 +25,11 @@ const routes: Routes = [
   { path: 'scoreBoard', component: ScoreBoardComponent },
   { path: 'profilePage', component: ProfilePageComponent },
   { path: 'favouriteGames', component: FavouriteGamesComponent, canActivate: [AuthGuardGuard] },
+  {
+    //lazy loading the admin component because it is accessible only to Admin role users
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

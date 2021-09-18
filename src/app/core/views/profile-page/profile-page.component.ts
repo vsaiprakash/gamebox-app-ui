@@ -6,6 +6,7 @@ import { FirebaseService } from '../../services/firebase.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Observable, Subscription } from 'rxjs';
 import { UserDBService } from '../../services/userdb.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -18,37 +19,23 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   editDisplayNameFlag: boolean;
   editEmailFlag: boolean;
 
-  userSubscription: Subscription;
-  userDBSubscription: Subscription;
+  loginSubscription: Subscription;
 
-  constructor(private firebaseService: FirebaseService,
-              private navigation: NavigationService,
+  constructor(private navigation: NavigationService,
               private router: Router,
-              private userdb: UserDBService) {
+              private loginService: LoginService) {
   }
 
   ngOnInit(): void {
-    this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+    this.loginSubscription = this.loginService.getCurrentUserDetails().subscribe((user)=>{
       this.user = user;
-      // console.log("User: "+JSON.stringify(user));
-      this.userDBSubscription = this.userdb.getUsers().subscribe(usersData => {
-        usersData.every(userData => {
-          if(userData.email==user.email){
-            this.user = userData;
-            console.log("User from DB "+JSON.stringify(userData));
-            return false
-          }
-          return true;
-        });
-      });
     });
     this.editDisplayNameFlag = false;
     this.editEmailFlag = false;
   }
 
   ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
-    this.userDBSubscription.unsubscribe();
+    this.loginSubscription.unsubscribe();
   }
 
   openLogin() {
@@ -65,8 +52,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   saveDisplayName(){
     this.editDisplayNameFlag = false;
-    this.firebaseService.updateCurrentUserDisplayName(this.user.displayName);
-    this.userdb.updateUser(this.user);
+    this.loginService.updateUser(this.user);
   }
 
   uploadImg(){
@@ -74,7 +60,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     //get image's url
     this.user.photoURL = LOCALUSERS.photoURL;
     //update the image url to user profile
-    this.firebaseService.updateCurrentUserPhotoURL(this.user.photoURL);
-    this.userdb.updateUser(this.user);
+    this.loginService.updateUser(this.user);
   }
 }

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-profile-dropdown-card',
@@ -17,7 +18,7 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges, OnDestro
 
   @Output() logoutEvent = new EventEmitter<string>();
 
-  constructor(private firebaseService: FirebaseService) {
+  constructor(private loginService: LoginService) {
   }
   
   ngOnDestroy(): void {
@@ -26,7 +27,7 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges, OnDestro
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.isLoggedIn.currentValue){
-      this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+      this.userSubscription = this.loginService.getCurrentUserDetails().subscribe((user)=>{
         this.user = user;
       });
     }

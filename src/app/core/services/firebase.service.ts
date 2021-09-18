@@ -17,7 +17,7 @@ export class FirebaseService {
 
   constructor(private firebaseAuth: AngularFireAuth) { }
 
-  async signIn(email: string, password: string){
+  async signInV1(email: string, password: string){
     console.log("Signing In ... ");
     // For Testing without Login
     // this.loggedInUser.next(LOCALUSERS);
@@ -34,52 +34,26 @@ export class FirebaseService {
 
   }
 
-  async signInV2(email: string, password: string){
+  signIn(email: string, password: string){
     console.log("Signing In ... ");
     // For Testing without Login
     // this.loggedInUser.next(LOCALUSERS);
-    // let prom = (from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
-    //   exhaustMap(value => {
-    //     // console.log("exhausting value: "+JSON.stringify(value));
-    //     return this.userdb.getUser(value.user.email);
-    //   })
-    // )).toPromise();
-    // console.log("Generated promise: "+JSON.stringify(prom));
-    // console.log("Before promise");
-    // await prom.then((res)=>{
-    //             console.log("UserModel "+JSON.stringify(res));
-    //             this.isLoggedIn = true;
-    //             this.loggedInUser.next(this.useDefaultUserDetails(res));
-    //             // this.loggedInUser = 
-    //             console.log("Signed In Successfully");
-    //           },
-    //           (err)=>{
-    //             console.log("ERROR IN PROMISE: "+JSON.stringify(err));
-    //           })
-    //           .catch((reason)=>{
-    //             console.log("ERROR REASON: "+JSON.stringify(reason));
-    //           });
+    return from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
+      map(res => res.user)
+    );
+              // .then((res)=>{
+              //   this.isLoggedIn = true;
+              //   let user = new UserModel(res.user.email, res.user.displayName, res.user.photoURL);
+              //   this.loggedInUser.next(this.useDefaultUserDetails(user));
+              //   console.log("Signed In Successfully");
+              // })
+              // .catch((reason)=>{
+              //   console.log("ERROR REASON: "+JSON.stringify(reason));
+              // });
 
-    // this.loggedInUser.next(from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
-    //             exhaustMap(value => {
-    //               // console.log("exhausting value: "+JSON.stringify(value));
-    //               return this.userdb.getUser(value.user.email);
-    //             })
-    //           ) as any);
-    
-    // return from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
-    //             exhaustMap(value => {
-    //               // console.log("exhausting value: "+JSON.stringify(value));
-    //               return this.userdb.getUser(value.user.email);
-    //             })
-    //           )
-    //           .subscribe(res =>{
-    //             console.log("Res: "+JSON.stringify(res));
-    //             this.loggedInUser.next(res as any);
-    //           })
   }
 
-  async signUp(email: string, password: string){
+  async signUpV1(email: string, password: string){
     console.log("Signing Up ... ");
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
               .then((res)=>{
@@ -92,6 +66,21 @@ export class FirebaseService {
                   console.log("SignUp Successful");
                 });
               });
+  }
+
+  signUp(email: string, password: string){
+    console.log("Signing Up ... ");
+    return from(this.firebaseAuth.createUserWithEmailAndPassword(email, password));
+              // .then((res)=>{
+              //   this.isLoggedIn = true;
+              //   let userModel = new UserModel(res.user.email, res.user.email, LOCALUSERS.photoURL)
+              //   res.user.updateProfile({
+              //     displayName: res.user.email,
+              //     photoURL: LOCALUSERS.photoURL
+              //   }).then(()=>{
+              //     console.log("SignUp Successful");
+              //   });
+              // });
   }
 
   logout(){

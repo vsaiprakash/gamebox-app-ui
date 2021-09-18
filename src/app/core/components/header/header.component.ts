@@ -8,6 +8,7 @@ import { UserModel } from '../../models/user-model';
 import { FirebaseService } from '../../services/firebase.service';
 import { GamesDataService } from '../../services/games-data.service';
 import { LanguageService } from '../../services/language.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -29,7 +30,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
     private firebaseService: FirebaseService,
     private languagesService: LanguageService,
-    private gamesDataService: GamesDataService) {
+    private gamesDataService: GamesDataService,
+    private loginService: LoginService) {
     this.appName = GAMEBOXCONFIG.APPNAME;
     this.languages = GAMEBOXCONFIG.LANGUAGES;
     this.categories = CATEGORIES_LIST;
@@ -37,13 +39,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isOnline = false;
     this.loggedIn = false;
   }
-  ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
-  }
 
   ngOnInit(): void {
     this.gamesDataService.getGames();
-    this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+    // this.userSubscription = this.firebaseService.getCurrentUserDetails().subscribe((user)=>{
+    //   if(user){
+    //     this.user = user;
+    //     this.loggedIn = true;
+    //   }
+    // });
+    this.userSubscription = this.loginService.getCurrentUserDetails().subscribe((user)=>{
+      console.log("Obtained User from sub: "+JSON.stringify(user));
       if(user){
         this.user = user;
         this.loggedIn = true;
@@ -98,5 +104,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       document.getElementById("online").style.color = "white";
       document.getElementById("offline").style.color = "yellow";
     }
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 }

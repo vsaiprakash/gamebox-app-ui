@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,6 +7,8 @@ import { UserModel } from '../../models/user-model';
 import { NavigationService } from './../../services/navigation.service';
 import { LOCALUSERS } from 'src/assets/LOCALUSERS';
 import { FirebaseService } from '../../services/firebase.service';
+import { LoginService } from '../../services/login.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -14,9 +16,10 @@ import { FirebaseService } from '../../services/firebase.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   user: UserModel;
+  userSubscription: Subscription;
 
   hide = true;
 
@@ -41,7 +44,8 @@ export class LoginComponent implements OnInit {
               private navigation: NavigationService,
               private router: Router,
               private firebaseService: FirebaseService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private loginService: LoginService) {
     this.successfulLoginMessage = "Login Success";
     this.failureLoginMessage = "Login Failed";
 
@@ -50,35 +54,50 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(){
-
+    this.userSubscription = this.loginService.getCurrentUserDetails().subscribe(
+      user => {
+        this.user = user;
+        if(user){
+          this.router.navigateByUrl("home");
+          this.onSuccessful(this.successfulLoginMessage);
+        }
+      }
+    );
   }
 
-  async loginWithFirebase(){
-    await this.firebaseService
-                .signIn(this.loginForm.get('email').value, this.loginForm.get('password').value)
-                .then(()=>{
-                  this.onSuccessful(this.successfulLoginMessage);
-                  this.router.navigateByUrl("home");
-                },
-                error => {
-                  this.onFailure(this.failureLoginMessage);
-                  console.log(error);
-                })
-                .catch((reason)=>{
-                  this.onFailure(this.failureLoginMessage);
-                });
+  // async loginWithFirebase(){
+  //   await this.firebaseService
+  //               .signIn(this.loginForm.get('email').value, this.loginForm.get('password').value)
+  //               .then(()=>{
+  //                 this.onSuccessful(this.successfulLoginMessage);
+  //                 this.router.navigateByUrl("home");
+  //               },
+  //               error => {
+  //                 this.onFailure(this.failureLoginMessage);
+  //                 console.log(error);
+  //               })
+  //               .catch((reason)=>{
+  //                 this.onFailure(this.failureLoginMessage);
+  //               });
+  // }
+
+  loginWithFirebase(){
+    this.loginService.login(
+      this.loginForm.get('email').value,
+      this.loginForm.get('password').value
+    )
   }
 
   async signUpWithFirebase(){
-    await this.firebaseService
-                .signUp(this.signUpForm.get('email').value, this.signUpForm.get('password').value)
-                .then(()=>{
-                  this.onSuccessful(this.successfulSignUpMessage);
-                  this.router.navigateByUrl("home");
-                })
-                .catch((reason)=>{
-                  this.onFailure(this.failureSignUpMessage);
-                });;
+    // await this.firebaseService
+    //             .signUp(this.signUpForm.get('email').value, this.signUpForm.get('password').value)
+    //             .then(()=>{
+    //               this.onSuccessful(this.successfulSignUpMessage);
+    //               this.router.navigateByUrl("home");
+    //             })
+    //             .catch((reason)=>{
+    //               this.onFailure(this.failureSignUpMessage);
+    //             });;
   }
 
   cancel(){
@@ -95,6 +114,10 @@ export class LoginComponent implements OnInit {
     this._snackBar.open(message, "OK", {
       duration: 2000, panelClass: ['failure-snackbar']
     });
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 
 }

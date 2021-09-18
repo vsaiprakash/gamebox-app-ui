@@ -24,6 +24,24 @@ export class UserDBService {
         );
     }
 
+    getUser(email: string) {
+        return this.getUsers().pipe(
+            map(usersData => {
+                let foundUserData;
+                usersData.every(userData => {
+                    if(userData.email==email){
+                        foundUserData = userData;
+                        console.log("User from DB "+JSON.stringify(userData));
+                        return false
+                    }
+                    return true;
+                  });
+
+                  return foundUserData;
+            })
+        );
+    }
+
     //signup requires a user entry in db as well
     createUser(user: UserModel){
         return this.firestore.collection('users').add(user);

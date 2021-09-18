@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/core/services/navigation.service';
 
 @Component({
   selector: 'app-admin-root',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminRootComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navigation: NavigationService) { }
 
   ngOnInit(): void {
   }
 
   back(){
-    
+    this.navigation.back();
   }
 
 }

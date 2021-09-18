@@ -1,0 +1,884 @@
+[
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#advancewars",
+        "game_title": "Advance Wars",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAdvance_Wars_Coverart.jpg?alt=media&token=9301b59f-2c75-4a71-a364-8028f1d9a7ab"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#advancewars2",
+        "game_title": "Advance Wars 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAdvance_Wars_2_Coverart.jpg?alt=media&token=8f0ef1e3-9061-4594-a153-19f6013ee947"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#aladdin",
+        "game_title": "Aladdin",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAladdin_Coverart.jpg?alt=media&token=f86e3b81-1564-4dfa-b6e0-fd97598f0813"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#alienhominid",
+        "game_title": "Alien Hominid",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FAlien_Hominid_Coverart.jfif?alt=media&token=4285250c-8fea-4cd6-a6ce-b03e5b00d5b1"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bomberman_max2blue",
+        "game_title": "Bomberman Max 2 - Blue Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FBomberman_Max_2_Blue_Advance_Coverart.jpg?alt=media&token=7c0e7dbd-ba3f-4221-887e-e398ad555d0c"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bomberman_tournament",
+        "game_title": "Bomberman Tournament",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": "https://firebasestorage.googleapis.com/v0/b/gamebox-app-backend-services.appspot.com/o/GBA_Images%2FBomberman_Tournament_Coverart.jpg?alt=media&token=e88d720c-c537-4a18-bbd4-813eb8f48d02"
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#bubblebobble",
+        "game_title": "Bubble Bobble: Old and New",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#croket1",
+        "game_title": "Croket! - Yume no Banker Survival!",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#croket2",
+        "game_title": "Croket! 2 - Yami no Bank to Banqueen",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#croket3",
+        "game_title": "Croket! 3 - Granu Oukoku no Nazo",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#croket4",
+        "game_title": "Croket! 4 - Bank no Mori no Mamorigami",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#digimon_racing",
+        "game_title": "Digimon Racing",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#dbz_supersonic",
+        "game_title": "Dragon Ball Z - Supersonic Warriors",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#drilldozer",
+        "game_title": "Drill Dozer",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#earthwormjim",
+        "game_title": "Earthworm Jim",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#earthwormjim2",
+        "game_title": "Earthworm Jim 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#ff1and2",
+        "game_title": "Final Fantasy 1 & 2 Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#ff4S",
+        "game_title": "Final Fantasy IV Advance (Sound Restoration Mod)",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#ff6",
+        "game_title": "Final Fantasy VI Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#final_fantasy_tactics",
+        "game_title": "Final Fantasy Tactics Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#fire_emblem",
+        "game_title": "Fire Emblem",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#frogger1",
+        "game_title": "Frogger Advance - The Great Quest",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#frogger2",
+        "game_title": "Frogger's Adventures - Temple of the Frog",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#frogger3",
+        "game_title": "Frogger's Adventures 2 - The Lost Wand",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#fzero_gp",
+        "game_title": "F-Zero - GP Legend",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#fzero_max",
+        "game_title": "F-Zero - Maximum Velocity",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gamewatch4",
+        "game_title": "Game & Watch Gallery 4",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#goldensun",
+        "game_title": "Golden Sun",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gunstar_super_heroes",
+        "game_title": "Gunstar Super Heroes",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#hamtaro_heartbreak",
+        "game_title": "Hamtaro - Ham-Ham Heartbreak",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#iridion",
+        "game_title": "Iridion 3D",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#kirbymirror",
+        "game_title": "Kirby & The Amazing Mirror",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#kirbynightmare",
+        "game_title": "Kirby: Nightmare in Dreamland",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#superstar",
+        "game_title": "Mario & Luigi: Superstar Saga",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#mariokart",
+        "game_title": "Mario Kart: Super Circuit",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#marioparty",
+        "game_title": "Mario Party Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#mariopinball",
+        "game_title": "Mario Pinball Land",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megamanbass",
+        "game_title": "Megaman & Bass",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle1",
+        "game_title": "Megaman Battle Network 1",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle2",
+        "game_title": "Megaman Battle Network 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle3_blue",
+        "game_title": "Megaman Battle Network 3 Blue",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle4_blue",
+        "game_title": "Megaman Battle Network 4 Blue Moon",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle4_red",
+        "game_title": "Megaman Battle Network 4 Red Sun",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle5",
+        "game_title": "Megaman Battle Network 5 Team Protoman",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_battle6",
+        "game_title": "Megaman Battle Network 6 Cybeast Falzar",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_zero1",
+        "game_title": "Megaman Zero",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_zero2",
+        "game_title": "Megaman Zero 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_zero3",
+        "game_title": "Megaman Zero 3",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#megaman_zero4",
+        "game_title": "Megaman Zero 4",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#metalslug",
+        "game_title": "Metal Slug Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#metroid_fusion",
+        "game_title": "Metriod Fusion",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#momotarou_dentetsu",
+        "game_title": "Momotarou Dentetsu G Gold Deck wo Tsukure!",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#monopoly",
+        "game_title": "Monopoly",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#monster_force",
+        "game_title": "Monster Force",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#mortal_kombat",
+        "game_title": "Mortal Kombat Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#onepiece",
+        "game_title": "One Piece",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pacman_world",
+        "game_title": "Pacman World",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pacman_world2",
+        "game_title": "Pacman World 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pokemonemerald",
+        "game_title": "Pokemon Emerald",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pokemongreen",
+        "game_title": "Pokemon Leaf Green",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pokemonred",
+        "game_title": "Pokemon Fire Red",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#mysteryred",
+        "game_title": "Pokemon Mystery Dungeon Red",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pokemonruby",
+        "game_title": "Pokemon Ruby",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#pokemonsapphire",
+        "game_title": "Pokemon Sapphire",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gba_video_pokemon_1",
+        "game_title": "Pokemon Video Show Pak 1",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gba_video_pokemon_2",
+        "game_title": "Pokemon Video Show Pak 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gba_video_pokemon_3",
+        "game_title": "Pokemon Video Show Pak 3",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#gba_video_pokemon_4",
+        "game_title": "Pokemon Video Show Pak 4",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#puyopop",
+        "game_title": "Puyo Pop",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sonic_advance",
+        "game_title": "Sonic Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sonic_advance2",
+        "game_title": "Sonic Advance 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sonic_advance3",
+        "game_title": "Sonic Advance 3",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sonicbattle",
+        "game_title": "Sonic Battle",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sonicpinball",
+        "game_title": "Sonic Pinball",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#spyro_adventure",
+        "game_title": "Spyro Adventure",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#spyro_ice",
+        "game_title": "Spyro: Season of Ice",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#spyro_flame",
+        "game_title": "Spyro 2: Season of Flame",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#supermarioadvance",
+        "game_title": "Super Mario Advance",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#supermarioadvance2",
+        "game_title": "Super Mario Advance 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#supermarioadvance3",
+        "game_title": "Super Mario Advance 3",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#supermarioadvance4",
+        "game_title": "Super Mario Advance 4",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#supermonkeyballjr",
+        "game_title": "Super Monkey Ball Jr",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#super_street_fighter_2_turbo_revival",
+        "game_title": "Super Street Fighter II: Turbo Revival",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#super_street_fighter_3_alpha",
+        "game_title": "Super Street Fighter III: Alpha",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#tales_of_phantasia",
+        "game_title": "Tales of Phantasia",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#tak2_staff_of_dreams",
+        "game_title": "Tak 2: The Staff of Dreams",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#tmnt",
+        "game_title": "Teenage Mutant Ninja Turtles",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#tetris_worlds",
+        "game_title": "Tetris Worlds",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sims_bustin_out",
+        "game_title": "The Sims: Bustin ' Out",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#sims2",
+        "game_title": "The Sims 2",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#simpsons",
+        "game_title": "The Simpsons: Road Rage",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#turok_evolution",
+        "game_title": "Turok Evolution",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#ty2",
+        "game_title": "Ty the Tasmanian Tiger 2 - Bush Rescue",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#ty3",
+        "game_title": "Ty the Tasmanian Tiger 3 - Night of the Quinkan",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#warioland4",
+        "game_title": "Wario Land 4",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#wario_ware",
+        "game_title": "Wario Ware Inc",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#zelda_past",
+        "game_title": "The Legend of Zelda: A Link to the Past",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    },
+    {
+        "game_iframelink": "https://jsemu2.github.io/gba/launcher.html#zelda_minish",
+        "game_title": "The Legend of Zelda: The Minish Cap",
+        "game_description": "",
+        "game_link": "",
+        "game_rating": 3,
+        "game_category": null,
+        "game_logo_link": null
+    }
+]

@@ -27,7 +27,7 @@ export class UserDBService {
     getUser(email: string) {
         return this.getUsers().pipe(
             map(usersData => {
-                let foundUserData;
+                let foundUserData = null;
                 usersData.every(userData => {
                     if(userData.email==email){
                         foundUserData = userData;

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private _snackBar: MatSnackBar,
               private navigation: NavigationService,
               private router: Router,
-              private firebaseService: FirebaseService,
+              // private firebaseService: FirebaseService,
               private formBuilder: FormBuilder,
               private loginService: LoginService) {
     this.successfulLoginMessage = "Login Success";
@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       user => {
         this.user = user;
         if(user){
+          console.log("User already logged in: "+JSON.stringify(user));
           this.router.navigateByUrl("home");
           this.onSuccessful(this.successfulLoginMessage);
         }

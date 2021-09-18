@@ -24,11 +24,12 @@ const routes: Routes = [
   { path: 'category/:id', component: CategorySelectedComponent },
   { path: 'scoreBoard', component: ScoreBoardComponent },
   { path: 'profilePage', component: ProfilePageComponent },
-  { path: 'favouriteGames', component: FavouriteGamesComponent, canActivate: [AuthGuardGuard] },
+  { path: 'favouriteGames', component: FavouriteGamesComponent},
   {
     //lazy loading the admin component because it is accessible only to Admin role users
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthGuardGuard] 
   },
   { path: '**', component: PageNotFoundComponent }
 ];

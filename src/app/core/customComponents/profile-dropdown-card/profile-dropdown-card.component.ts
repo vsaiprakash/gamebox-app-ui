@@ -16,7 +16,7 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges, OnDestro
   user: UserModel;
   userSubscription: Subscription;
 
-  @Output() logoutEvent = new EventEmitter<string>();
+  // @Output() logoutEvent = new EventEmitter<string>();
 
   constructor(private loginService: LoginService) {
   }
@@ -36,7 +36,7 @@ export class ProfileDropdownCardComponent implements OnInit, OnChanges, OnDestro
   ngOnInit(): void {
   }
 
-  logout(){
-    this.logoutEvent.emit("logout");
-  }
+  // logout(){
+  //   this.logoutEvent.emit("logout");
+  // }
 }

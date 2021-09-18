@@ -1,6 +1,7 @@
 import { Component,  OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { GAMEBOXCONFIG, CATEGORIES_LIST } from 'src/assets/GAMEBOXCONFIG';
 import { CategoryModel } from '../../models/category-model';
@@ -27,8 +28,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   userSubscription: Subscription;
 
-  constructor(private router: Router,
+  constructor(
     private firebaseService: FirebaseService,
+    private router: Router,
     private languagesService: LanguageService,
     private gamesDataService: GamesDataService,
     private loginService: LoginService) {
@@ -55,6 +57,27 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.loggedIn = true;
       }
     });
+  }
+
+  isAdmin(): Observable<boolean>{
+    // if(this.user){
+    //   return of(this.user.role=="admin");
+    // }
+    // return of(false);
+    
+    return this.loginService.getCurrentUserDetails().pipe(
+      map(user => {
+        if(user)
+          return user.role=="admin";
+        else
+          return false;
+      })
+    )
+
+    // if(this.user){
+    //   return this.user.role=="admin";
+    // }
+    // return false;
   }
 
   openCategory(category_value: string): void {
@@ -85,7 +108,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.firebaseService.logout();
+    // this.firebaseService.logout();
+    this.loginService.logout();
     this.loggedIn = false;
     this.goToHome();
   }

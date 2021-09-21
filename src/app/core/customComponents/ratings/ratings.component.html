@@ -1,8 +1,9 @@
 <div *ngIf="currRating!=null">
-  <span *ngFor="let e of [].constructor(currRating);">
+  <span *ngFor="let e of [].constructor(currRating);" class="full-star">
     <mat-icon>star</mat-icon>
   </span>
-  <span *ngFor="let e of [].constructor(maxRating-currRating);">
-    <mat-icon>star_border</mat-icon>
+  <span *ngFor="let e of [].constructor(maxRating-currRating);" class="empty-star">
+    <mat-icon>star</mat-icon>
   </span>
+  <!-- _border -->
 </div>

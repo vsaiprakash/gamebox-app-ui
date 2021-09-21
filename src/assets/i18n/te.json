@@ -6,7 +6,10 @@
             "PROFILE": "ప్రొఫైల్",
             "LOGIN": "సైన్ ఇన్",
             "OFFLINE": "ఆఫ్‌లైన్",
-            "ONLINE": "ఆన్లైన్"
+            "ONLINE": "ఆన్లైన్",
+            "SCOREBOARD":"స్కోరు బోర్డు",
+            "CATEGORIES": "వర్గాలు",
+            "ADMIN": "నిర్వాహకులు"
         },
         "FOOTER":{
             "TITLE": "గేమ్ బాక్స్"

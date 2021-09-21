@@ -11,19 +11,19 @@
 
   <span class="example-spacer"></span>
   <div class="heading-admin">
-    <button *ngIf="isAdmin()|async" mat-icon-button (click)="goToAdmin()" matTooltip="Admin">
+    <button *ngIf="isAdmin()|async" mat-icon-button (click)="goToAdmin()" matTooltip="{{'APP.HEADER.ADMIN' | translate}}">
       <mat-icon>admin_panel_settings</mat-icon>
     </button>
   </div>
 
   <div class="heading-score">
-    <button mat-icon-button (click)="goToScoreBoard()" matTooltip="Score Board">
+    <button mat-icon-button (click)="goToScoreBoard()" matTooltip="{{'APP.HEADER.SCOREBOARD' | translate}}">
       <mat-icon>sports_score</mat-icon>
     </button>
   </div>
 
   <div class="heading-category">
-    <button mat-icon-button [matMenuTriggerFor]="categoriesMenu" matTooltip="Categories">
+    <button mat-icon-button [matMenuTriggerFor]="categoriesMenu" matTooltip="{{'APP.HEADER.CATEGORIES' | translate}}">
       <mat-icon>category</mat-icon>
     </button>
   </div>
@@ -67,7 +67,7 @@
   </mat-menu>
 
   <div class="heading-login">
-    <button *ngIf="!loggedIn" mat-icon-button matTooltip="Login" (click)="openLogin()">
+    <button *ngIf="!loggedIn" mat-icon-button matTooltip="{{'APP.HEADER.LOGIN' | translate}}" (click)="openLogin()">
       <mat-icon>login</mat-icon>
     </button>
   </div>

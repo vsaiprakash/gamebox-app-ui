@@ -6,7 +6,10 @@
             "PROFILE": "Profile",
             "LOGIN": "Login",
             "OFFLINE": "Offline",
-            "ONLINE": "Online"
+            "ONLINE": "Online",
+            "SCOREBOARD":"Score Board",
+            "CATEGORIES": "Categories",
+            "ADMIN": "Admin"
         },
         "FOOTER":{
             "TITLE": "Game Box"

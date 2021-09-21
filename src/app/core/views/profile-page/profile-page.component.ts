@@ -18,6 +18,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   user: UserModel;
   editDisplayNameFlag: boolean;
   editEmailFlag: boolean;
+  editUsernameFlag: boolean;
 
   loginSubscription: Subscription;
 
@@ -60,6 +61,15 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     //get image's url
     this.user.photoURL = LOCALUSERS.photoURL;
     //update the image url to user profile
+    this.loginService.updateUser(this.user);
+  }
+
+  editUsername(){
+    this.editUsernameFlag = true;
+  }
+
+  saveUsername(){
+    this.editUsernameFlag = false;
     this.loginService.updateUser(this.user);
   }
 }

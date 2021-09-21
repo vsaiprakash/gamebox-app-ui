@@ -6,6 +6,9 @@ import { AdminRootComponent } from './admin-root/admin-root.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminGamesComponent } from './admin-games/admin-games.component';
@@ -32,10 +35,14 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     AdminRoutingModule,
+
     MatTabsModule,
     MatCardModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     //Internationalized with multiple languages forChild module
     TranslateModule.forChild({
       loader: {

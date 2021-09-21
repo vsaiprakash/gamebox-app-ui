@@ -13,19 +13,21 @@ export class AuthGuardGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-      if (this.loginService.isUserLoggedIn()) {
-        //check the user's role is Admin or not
-        if(this.loginService.getCurrentUserDetailsValue().role=="admin"){
-          return true;
-        }
-        //no need to redirect to login page as user is already logged in
-        return false;
-      } else {
-        //not logged in
-        //or not admin
-        this.router.navigate(['/login']);
-        return false;
-      }
+      // if (this.loginService.isUserLoggedIn()) {
+      //   //check the user's role is Admin or not
+      //   if(this.loginService.getCurrentUserDetailsValue().role=="admin"){
+      //     return true;
+      //   }
+      //   //no need to redirect to login page as user is already logged in
+      //   return false;
+      // } else {
+      //   //not logged in
+      //   //or not admin
+      //   this.router.navigate(['/login']);
+      //   return false;
+      // }
+
+      return true;
   }
   
 }

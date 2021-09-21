@@ -118,17 +118,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.languagesService.setLang(language);
   }
 
-  toggle() {
-    //need to improve this later avoiding the direct DOM manipulation
-    if (this.isOnline) {
-      document.getElementById("online").style.color = "yellow";
-      document.getElementById("offline").style.color = "white";
-    }
-    else {
-      document.getElementById("online").style.color = "white";
-      document.getElementById("offline").style.color = "yellow";
-    }
-  }
+  // toggle() {
+  //   //need to improve this later avoiding the direct DOM manipulation
+  //   if (this.isOnline) {
+  //     document.getElementById("online").style.color = "yellow";
+  //     document.getElementById("offline").style.color = "white";
+  //   }
+  //   else {
+  //     document.getElementById("online").style.color = "white";
+  //     document.getElementById("offline").style.color = "yellow";
+  //   }
+  // }
 
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe();

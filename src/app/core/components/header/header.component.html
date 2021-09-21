@@ -71,11 +71,12 @@
       <mat-icon>login</mat-icon>
     </button>
   </div>
-  <div>
+  <!-- Online/Offline toggle switch is removed temporarily -->
+  <!-- <div [hidden]=true>
     <label class="toggle-label-offline" id="offline">{{'APP.HEADER.OFFLINE' | translate}}</label>
     <mat-slide-toggle class="custom-toggle" [(ngModel)]="isOnline" (change)="toggle()">
     </mat-slide-toggle>
     <label class="toggle-label-online" id="online">{{'APP.HEADER.ONLINE' | translate}}</label>
-  </div>
+  </div> -->
 </mat-toolbar>
 </p>

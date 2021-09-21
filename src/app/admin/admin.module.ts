@@ -23,7 +23,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AdminRootComponent, AdminUsersComponent, AdminGamesComponent, AdminCategoriesComponent],
+  declarations: [
+    AdminRootComponent, 
+    AdminUsersComponent, 
+    AdminGamesComponent, 
+    AdminCategoriesComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

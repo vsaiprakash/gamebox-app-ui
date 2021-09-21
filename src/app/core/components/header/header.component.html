@@ -3,10 +3,12 @@
 
 
   <div class="heading">
-    <mat-icon class="custom-gamepad-icon">videogame_asset</mat-icon>
-    <a (click)="goToHome()">
-      {{ 'APP.HEADER.TITLE' | translate }}
-    </a>
+    <span (click)="goToHome()">
+      <mat-icon class="custom-gamepad-icon clickable">videogame_asset</mat-icon>
+      <a >
+        {{ 'APP.HEADER.TITLE' | translate }}
+      </a>
+    </span>
   </div>
 
   <span class="example-spacer"></span>

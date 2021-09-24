@@ -1,7 +1,7 @@
 # Gamebox App UI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.2.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vsaiprakash/gamebox-app-ui)
+<!-- [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vsaiprakash/gamebox-app-ui) -->
 
 ## Live Demo Available at:
 Live Demo deployed at http://vsaiprakash.github.io/gamebox-app-ui

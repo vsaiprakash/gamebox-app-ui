@@ -3,8 +3,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 <!-- [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vukkumsp/gamebox-app-ui) -->
 
-<!-- ## Live Demo Available at:
-Live Demo deployed at http://vukkumsp.github.io/gamebox-app-ui -->
+## Live Demo Available at:
+Live Demo deployed at http://vukkumsp.github.io/gamebox-app-ui
 
 ## Deployment Tool
 NPM Library used for deployment: [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
